@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Book your premium wellness session at Supen Spa, Bandra Mumbai. Simple WhatsApp booking. 9 luxury massage rituals from ₹3,000.">
+    <meta name="keywords" content="book spa session mumbai, spa appointment, whatsapp booking, luxury massage booking">
+    <title>Book Your Session | Supen Spa — Luxury Wellness Mumbai</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <style>
+        body {
+            margin-top: 0;
+            padding-top: 80px;
+        }
+
+        .site-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* ── Book Now page layout ── */
+        .book-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ── Steps ── */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .step-card {
+            background: rgba(26, 11, 46, 0.55);
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            border-radius: 18px;
+            padding: 2rem 1.4rem;
+            text-align: center;
+            backdrop-filter: blur(14px);
+            box-shadow: inset 0 1px 0 rgba(255, 215, 0, 0.2), 0 4px 20px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.4), transparent);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 24px rgba(255, 215, 0, 0.18), 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #FFD700, #F0B90B);
+            color: #0E0620;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin: 0 auto 1rem;
+            box-shadow: 0 0 16px rgba(255, 215, 0, 0.35);
+        }
+
+        .step-card h3 {
+            color: #FFD700;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        /* ── Service mini-cards ── */
+        .services-book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-mini {
+            background: rgba(26, 11, 46, 0.52);
+            border: 1px solid rgba(255, 215, 0, 0.14);
+            border-radius: 16px;
+            padding: 1.5rem 1.2rem;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-mini:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 215, 0, 0.35);
+        }
+
+        .service-mini .svc-icon {
+            font-size: 1.8rem;
+            color: #B39DDB;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .service-mini h3 {
+            color: #FFD700;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .service-mini .price-tag {
+            color: #FFD700;
+            font-weight: 800;
+            font-size: 1.1rem;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .service-mini .dur {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* ── Pricing mini cards on book page ── */
+        .pkg-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .pkg-card {
+            background: rgba(26, 11, 46, 0.55);
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(14px);
+            box-shadow: inset 0 1px 0 rgba(255, 215, 0, 0.18), 0 4px 20px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+
+        .pkg-card.featured {
+            border-color: rgba(255, 215, 0, 0.45);
+            box-shadow: 0 0 32px rgba(255, 215, 0, 0.2), inset 0 1px 0 rgba(255, 215, 0, 0.3);
+        }
+
+        .pkg-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: linear-gradient(135deg, #FFD700, #F0B90B);
+            color: #0E0620;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .pkg-card h3 {
+            color: #FFD700;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .pkg-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #FFD700;
+            font-family: 'Outfit', sans-serif;
+            margin: 0.5rem 0;
+        }
+
+        .pkg-per {
+            color: rgba(255, 215, 0, 0.6);
+            font-size: 0.82rem;
+            margin-bottom: 1rem;
+        }
+
+        .pkg-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 1.2rem;
+        }
+
+        .pkg-card ul li {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.88rem;
+            padding: 0.35rem 0 0.35rem 1.4rem;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.06);
+        }
+
+        .pkg-card ul li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+            font-size: 0.65rem;
+            top: 0.55rem;
+        }
+
+        /* ── FAQ ── */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .faq-item {
+            border: 1px solid rgba(255, 215, 0, 0.14);
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
+            overflow: hidden;
+        }
+
+        .faq-q {
+            background: rgba(26, 11, 46, 0.5);
+            padding: 1.1rem 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            color: #FFD700;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.3s ease;
+            user-select: none;
+        }
+
+        .faq-q:hover {
+            background: rgba(26, 11, 46, 0.75);
+        }
+
+        .faq-q .arrow {
+            color: #B39DDB;
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-q.open .arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-a {
+            background: rgba(14, 6, 32, 0.5);
+            padding: 0 1.4rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.3s ease;
+        }
+
+        .faq-a.open {
+            max-height: 300px;
+            padding: 1rem 1.4rem;
+        }
+
+        .faq-a p {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        .big-cta {
+            text-align: center;
+            background: rgba(26, 11, 46, 0.5);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 22px;
+            padding: 3.5rem 2rem;
+            backdrop-filter: blur(14px);
+            margin-bottom: 3rem;
+        }
+
+        .big-cta h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #FFD700, #B39DDB, #00E5FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.8rem;
+        }
+
+        .big-cta p {
+            color: rgba(255, 255, 255, 0.68);
+            margin-bottom: 1.8rem;
+        }
+
+        .btn-wa-big {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.9rem 2.4rem;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s ease;
+            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-wa-big:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+            color: #fff;
+        }
+
+        .section-hed {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #FFD700, #FFE55C, #B39DDB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-sub-book {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .pkg-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pkg-card.featured {
+                transform: none;
+            }
+
+            .big-cta h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" role="banner">
+        <div class="container">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem 0;gap:2rem;">
+                <div class="site-title"><a href="01-home.html" aria-label="Supen Spa Home">Supen <span>SPA</span></a>
+                </div>
+                <nav aria-label="Main navigation"
+                    style="flex:1;display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;">
+                    <a href="01-home.html">Home</a>
+                    <a href="02-about.html">About</a>
+                    <a href="03-services.html">Services</a>
+                    <a href="05-pricing.html">Pricing</a>
+                    <a href="07-contact.html">Contact</a>
+                </nav>
+                <a href="https://wa.me/919819893901" target="_blank" rel="noopener"
+                    style="display:inline-flex;align-items:center;gap:0.45rem;padding:0.55rem 1.2rem;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border-radius:10px;font-weight:700;font-size:0.88rem;text-decoration:none;white-space:nowrap;box-shadow:0 4px 14px rgba(37,211,102,0.3);"
+                    aria-label="Book via WhatsApp">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Book Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/919819893901?text=Hello%20Supen%20Spa%2C%20I%20am%20ready%20to%20book%20my%20session."
+        target="_blank" rel="noopener" class="whatsapp-floating" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <!-- HERO -->
+    <section class="hero-section-half hero-booking" aria-labelledby="book-hero-heading">
+        <div class="hero-content">
+            <p class="hero-subtitle">Book Your Session</p>
+            <h1 id="book-hero-heading">Begin Your Royal Transformation</h1>
+            <p class="lead-text">Your private wellness session is just a WhatsApp message away. Secure, simple, and
+                instant booking in minutes.</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div style="padding: 4rem 0;">
+        <div class="book-wrap">
+
+            <!-- Steps -->
+            <h2 class="section-hed">How to Book in 4 Steps</h2>
+            <p class="section-sub-book">Simple, private, and instant — the way luxury booking should be.</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number" aria-hidden="true">1</div>
+                    <h3>Open WhatsApp</h3>
+                    <p>Tap the button below to open a direct chat with our wellness team on +91 98198 93901.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number" aria-hidden="true">2</div>
+                    <h3>Share Your Goal</h3>
+                    <p>Tell us what wellness outcome you're seeking — stress relief, recovery, or pure luxury.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number" aria-hidden="true">3</div>
+                    <h3>Get Recommendations</h3>
+                    <p>Our experts suggest the perfect service, therapist, and timing just for you.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number" aria-hidden="true">4</div>
+                    <h3>Confirm &amp; Relax</h3>
+                    <p>Lock in your appointment and prepare to experience royal wellness like never before.</p>
+                </div>
+            </div>
+
+            <!-- Services Quick Pick -->
+            <h2 class="section-hed">Choose Your Ritual</h2>
+            <p class="section-sub-book">Browse and pick the perfect treatment for your session.</p>
+            <div class="services-book-grid">
+                <div class="service-mini">
+                    <span class="svc-icon"><i class="fas fa-leaf" aria-hidden="true"></i></span>
+                    <h3>Aromatherapy Royal</h3>
+                    <div class="dur">90 minutes</div>
+                    <div class="price-tag">₹3,500</div>
+                    <a href="04-01-aromatherapy.html" class="btn btn-gold btn-small"
+                        style="margin-top:0.8rem;display:inline-block;">Details</a>
+                </div>
+                <div class="service-mini">
+                    <span class="svc-icon"><i class="fas fa-fire" aria-hidden="true"></i></span>
+                    <h3>Deep Tissue Therapy</h3>
+                    <div class="dur">90 minutes</div>
+                    <div class="price-tag">₹3,000</div>
+                    <a href="04-02-deep-tissue.html" class="btn btn-gold btn-small"
+                        style="margin-top:0.8rem;display:inline-block;">Details</a>
+                </div>
+                <div class="service-mini">
+                    <span class="svc-icon"><i class="fas fa-sun" aria-hidden="true"></i></span>
+                    <h3>Hot Stone Therapy</h3>
+                    <div class="dur">90 minutes</div>
+                    <div class="price-tag">₹3,800</div>
+                    <a href="04-03-hot-stone.html" class="btn btn-gold btn-small"
+                        style="margin-top:0.8rem;display:inline-block;">Details</a>
+                </div>
+                <div class="service-mini">
+                    <span class="svc-icon"><i class="fas fa-yin-yang" aria-hidden="true"></i></span>
+                    <h3>Thai Dry Massage</h3>
+                    <div class="dur">90 minutes</div>
+                    <div class="price-tag">₹3,500</div>
+                    <a href="04-04-thai-massage.html" class="btn btn-gold btn-small"
+                        style="margin-top:0.8rem;display:inline-block;">Details</a>
+                </div>
+                <div class="service-mini">
+                    <span class="svc-icon"><i class="fas fa-spa" aria-hidden="true"></i></span>
+                    <h3>Swedish Massage</h3>
+                    <div class="dur">60–90 minutes</div>
+                    <div class="price-tag">₹3,000</div>
+                    <a href="04-05-swedish.html" class="btn btn-gold btn-small"
+                        style="margin-top:0.8rem;display:inline-block;">Details</a>
+                </div>
+                <div class="service-mini">
+                    <span class="svc-icon"><i class="fas fa-wind" aria-hidden="true"></i></span>
+                    <h3>Balinese Massage</h3>
+                    <div class="dur">90 minutes</div>
+                    <div class="price-tag">₹3,500</div>
+                    <a href="04-06-balinese.html" class="btn btn-gold btn-small"
+                        style="margin-top:0.8rem;display:inline-block;">Details</a>
+                </div>
+                <div class="service-mini">
+                    <span class="svc-icon"><i class="fas fa-seedling" aria-hidden="true"></i></span>
+                    <h3>Body Scrub &amp; Renewal</h3>
+                    <div class="dur">90 minutes</div>
+                    <div class="price-tag">₹4,500</div>
+                    <a href="04-07-body-scrub.html" class="btn btn-gold btn-small"
+                        style="margin-top:0.8rem;display:inline-block;">Details</a>
+                </div>
+                <div class="service-mini">
+                    <span class="svc-icon"><i class="fas fa-heart" aria-hidden="true"></i></span>
+                    <h3>Couples Retreat</h3>
+                    <div class="dur">120 minutes</div>
+                    <div class="price-tag">₹7,500</div>
+                    <a href="04-08-couples.html" class="btn btn-gold btn-small"
+                        style="margin-top:0.8rem;display:inline-block;">Details</a>
+                </div>
+                <div class="service-mini"
+                    style="border-color:rgba(255,215,0,0.4);box-shadow:0 0 20px rgba(255,215,0,0.15);">
+                    <span class="svc-icon" style="color:#FFD700;"><i class="fas fa-crown" aria-hidden="true"></i></span>
+                    <h3>Signature Royal Ritual</h3>
+                    <div class="dur" style="color:rgba(255,215,0,0.7);">Elite · 120 min</div>
+                    <div class="price-tag" style="font-size:1.3rem;">₹20,000</div>
+                    <a href="04-09-signature.html" class="btn btn-gold btn-small"
+                        style="margin-top:0.8rem;display:inline-block;">Details</a>
+                </div>
+            </div>
+
+            <!-- Packages -->
+            <h2 class="section-hed">Membership Packages</h2>
+            <p class="section-sub-book">Save more with our curated wellness commitment plans.</p>
+            <div class="pkg-grid">
+                <div class="pkg-card">
+                    <h3>Silver Experience</h3>
+                    <div class="pkg-price">₹7,500</div>
+                    <div class="pkg-per">~₹2,500 per session</div>
+                    <ul>
+                        <li>3 specialist wellness sessions</li>
+                        <li>90 minutes each</li>
+                        <li>Any service of your choice</li>
+                        <li>Valid 90 days</li>
+                        <li>Flexible scheduling</li>
+                    </ul>
+                    <a href="https://wa.me/919819893901?text=Hello%20Supen%20Spa%2C%20I%20am%20interested%20in%20the%20Silver%20Experience%20package%20for%20%E2%82%B97500."
+                        target="_blank" rel="noopener" class="btn-wa-big"
+                        style="width:100%;justify-content:center;padding:0.65rem 1rem;font-size:0.9rem;border-radius:10px;"
+                        aria-label="Book Silver package via WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Book Silver
+                    </a>
+                </div>
+                <div class="pkg-card featured">
+                    <div class="pkg-badge">⭐ Most Popular</div>
+                    <h3>Gold Ritual</h3>
+                    <div class="pkg-price">₹35,000</div>
+                    <div class="pkg-per">~₹2,917 per session</div>
+                    <ul>
+                        <li>12 premier wellness sessions</li>
+                        <li>Annual membership (12 months)</li>
+                        <li>Priority scheduling</li>
+                        <li>10% add-on discount</li>
+                        <li>Wellness consultation included</li>
+                        <li>Free upgrade option</li>
+                    </ul>
+                    <a href="https://wa.me/919819893901?text=Hello%20Supen%20Spa%2C%20I%20am%20interested%20in%20the%20Gold%20Ritual%20annual%20package%20for%20%E2%82%B935000."
+                        target="_blank" rel="noopener" class="btn-wa-big"
+                        style="width:100%;justify-content:center;padding:0.65rem 1rem;font-size:0.9rem;border-radius:10px;"
+                        aria-label="Book Gold package via WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Book Gold
+                    </a>
+                </div>
+                <div class="pkg-card">
+                    <h3>Royal Premium</h3>
+                    <div class="pkg-price">₹1,80,000</div>
+                    <div class="pkg-per">Ultimate Annual Commitment</div>
+                    <ul>
+                        <li>Unlimited wellness sessions*</li>
+                        <li>90–120 min rituals</li>
+                        <li>Multi-year membership</li>
+                        <li>VIP concierge service</li>
+                        <li>15% add-on discount</li>
+                        <li>Exclusive guest privileges</li>
+                    </ul>
+                    <a href="https://wa.me/919819893901?text=Hello%20Supen%20Spa%2C%20I%20am%20interested%20in%20the%20Royal%20Premium%20package%20for%20%E2%82%B9180000."
+                        target="_blank" rel="noopener" class="btn-wa-big"
+                        style="width:100%;justify-content:center;padding:0.65rem 1rem;font-size:0.9rem;border-radius:10px;"
+                        aria-label="Book Royal Premium via WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Book Royal
+                    </a>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <h2 class="section-hed">Frequently Asked Questions</h2>
+            <p class="section-sub-book">Everything you need to know before booking.</p>
+            <div class="faq-list" id="faq-section">
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)" role="button" aria-expanded="false" tabindex="0">
+                        <span>I'm new to massage — what should I expect?</span>
+                        <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-a" role="region">
+                        <p>No worries! Our therapists are trained to work with all experience levels. Just tell us
+                            during WhatsApp booking that you're new, and we'll provide gentle guidance and customize
+                            your session accordingly.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)" role="button" aria-expanded="false" tabindex="0">
+                        <span>Can I reschedule or cancel my appointment?</span>
+                        <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-a" role="region">
+                        <p>Absolutely. Send us a WhatsApp message with 24-hour notice and we'll accommodate you. We
+                            understand life happens and we're happy to work with you.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)" role="button" aria-expanded="false" tabindex="0">
+                        <span>What should I wear or bring?</span>
+                        <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-a" role="region">
+                        <p>Come as you are in comfortable clothing. We provide all premium oils, hot stones,
+                            aromatherapy tools, and wellness equipment. Just bring yourself and your intention for
+                            healing.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)" role="button" aria-expanded="false" tabindex="0">
+                        <span>What payment methods are accepted?</span>
+                        <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-a" role="region">
+                        <p>We accept UPI, credit/debit cards, bank transfers, and cash. Payment details are confirmed
+                            via WhatsApp before your appointment, before or after your session as per your preference.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)" role="button" aria-expanded="false" tabindex="0">
+                        <span>Do you offer gift cards or gift packages?</span>
+                        <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-a" role="region">
+                        <p>Yes! Silver, Gold, and Royal packages make perfect gifts. WhatsApp us for custom gift
+                            packaging and a personalized message. Your recipient will receive a wellness experience
+                            they'll never forget.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Big CTA -->
+            <div class="big-cta">
+                <h2>Ready to Begin Your Transformation?</h2>
+                <p>Connect with us on WhatsApp in seconds — your royal wellness journey awaits.</p>
+                <a href="https://wa.me/919819893901?text=Hello%20Supen%20Spa%2C%20I%20am%20ready%20to%20book%20my%20premium%20wellness%20session.%20Please%20share%20available%20times."
+                    target="_blank" rel="noopener" class="btn-wa-big" aria-label="Book your session on WhatsApp now">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp +91 98198 93901
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-widgets">
+                <div class="footer-widget">
+                    <h3>Supen Spa</h3>
+                    <p>9 premier wellness rituals in Bandra, Mumbai. Private, exclusive, transformative.</p>
+                </div>
+                <div class="footer-widget">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style:none;padding:0;">
+                        <li><a href="01-home.html">Home</a></li>
+                        <li><a href="02-about.html">About</a></li>
+                        <li><a href="03-services.html">Services</a></li>
+                        <li><a href="05-pricing.html">Pricing</a></li>
+                        <li><a href="07-contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3>Contact</h3>
+                    <p><a href="tel:+919819893901">+91 98198 93901</a></p>
+                    <p><a href="mailto:hello@supenspa.com">hello@supenspa.com</a></p>
+                    <p>Bandra, Mumbai</p>
+                </div>
+                <div class="footer-widget">
+                    <h3>Book Now</h3>
+                    <a href="https://wa.me/919819893901" target="_blank" rel="noopener"
+                        style="display:inline-flex;align-items:center;gap:0.45rem;padding:0.6rem 1.2rem;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border-radius:10px;font-weight:700;font-size:0.88rem;text-decoration:none;box-shadow:0 4px 14px rgba(37,211,102,0.3);width:100%;justify-content:center;"
+                        aria-label="Book via WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Supen Spa. All rights reserved. Experience wellness like royalty.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(el) {
+            const isOpen = el.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-q').forEach(q => {
+                q.classList.remove('open');
+                q.setAttribute('aria-expanded', 'false');
+                q.nextElementSibling.classList.remove('open');
+            });
+            if (!isOpen) {
+                el.classList.add('open');
+                el.setAttribute('aria-expanded', 'true');
+                el.nextElementSibling.classList.add('open');
+            }
+        }
+        // Keyboard accessibility for FAQ
+        document.querySelectorAll('.faq-q').forEach(btn => {
+            btn.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleFaq(btn); }
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+</body>
+
+</html>

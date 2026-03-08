@@ -1,0 +1,815 @@
+/* ====================================
+   SUPEN SPA - RESPONSIVE STYLES
+   Mobile-First Approach
+   ==================================== */
+
+/* ====================================
+   EXTRA SMALL DEVICES (320px - 480px)
+   ==================================== */
+
+@media (max-width: 480px) {
+
+    /* Navigation */
+    .nav-container {
+        padding: 1rem 0.5rem;
+    }
+
+    .logo h1 {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 50vh;
+        margin-top: 60px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+        margin: 0.5rem 0;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    /* Container */
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Sections */
+    section {
+        padding: 2rem 0;
+    }
+
+    /* Grid Layouts */
+    .treatments-grid,
+    .features-grid,
+    .testimonials-carousel,
+    .gallery-grid,
+    .blog-grid,
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .about-grid,
+    .contact-grid,
+    .details-grid,
+    .booking-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Hero Cards */
+    .treatment-card,
+    .feature-box,
+    .pricing-card,
+    .blog-card,
+    .gallery-item {
+        min-height: auto;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    .treatment-icon {
+        font-size: 2rem;
+    }
+
+    /* Forms */
+    .form-group {
+        gap: 0.3rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .social-icons,
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Page Hero */
+    .page-hero {
+        height: 250px;
+    }
+
+    .page-hero-title {
+        font-size: 1.5rem;
+    }
+
+    /* Filter Buttons */
+    .filter-buttons {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    /* Featured Article */
+    .featured-article {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-image img {
+        height: 200px;
+    }
+
+    /* Sidebar Cards */
+    .booking-card,
+    .booking-info {
+        position: relative;
+        top: 0;
+    }
+
+    /* Details Grid */
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-form-element {
+        gap: 0.3rem;
+    }
+
+    /* Dividers */
+    .gold-divider {
+        width: 60px;
+    }
+}
+
+/* ====================================
+   SMALL DEVICES (481px - 768px)
+   ==================================== */
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+    /* Navigation */
+    .nav-container {
+        padding: 1rem 1.5rem;
+    }
+
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 60vh;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Container */
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    /* Sections */
+    section {
+        padding: 2.5rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Grid Layouts */
+    .treatments-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonials-carousel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid,
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Pricing Card */
+    .pricing-card.highlighted {
+        transform: scale(1.02);
+    }
+
+    /* Featured Article */
+    .featured-article {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-image img {
+        height: 250px;
+    }
+
+    /* Page Hero */
+    .page-hero {
+        height: 300px;
+    }
+
+    .page-hero-title {
+        font-size: 2rem;
+    }
+
+    /* Process Steps */
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Form Row */
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Booking Form */
+    .bookingform-element {
+        gap: 0.5rem;
+    }
+
+    /* Social Links */
+    .social-links {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ====================================
+   MEDIUM DEVICES (769px - 1024px)
+   ==================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* Navigation */
+    .nav-container {
+        padding: 1rem 2rem;
+    }
+
+    .nav-menu {
+        gap: 1.5rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Container */
+    .container {
+        padding: 0 2rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 80vh;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    /* Sections */
+    section {
+        padding: 3rem 0;
+    }
+
+    /* Grid Layouts */
+    .treatments-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonials-carousel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .details-grid {
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    .booking-container {
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    /* Featured Article */
+    .featured-article {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Page Hero */
+    .page-hero {
+        height: 350px;
+    }
+
+    .page-hero-title {
+        font-size: 2.5rem;
+    }
+
+    /* Pricing Card */
+    .pricing-card.highlighted {
+        transform: scale(1.05);
+    }
+
+    /* Process Steps */
+    .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Related services */
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Testimonials Extended */
+    .testimonials-extended-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Social Links */
+    .social-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ====================================
+   LARGE DEVICES (1025px and above)
+   ==================================== */
+
+@media (min-width: 1025px) {
+
+    /* Navigation */
+    .nav-container {
+        padding: 1rem 2rem;
+    }
+
+    .nav-menu {
+        gap: 2rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    /* Container */
+    .container {
+        padding: 0 2rem;
+    }
+
+    /* Sections */
+    section {
+        padding: 5rem 0;
+    }
+
+    /* Grid Layouts */
+    .treatments-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonials-carousel {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .details-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .booking-container {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    /* Featured Article */
+    .featured-article {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Related services */
+    .related-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Testimonials Extended */
+    .testimonials-extended-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Process Steps */
+    .process-steps {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Booking Card */
+    .booking-card {
+        position: sticky;
+        top: 100px;
+    }
+
+    /* Page Hero */
+    .page-hero {
+        height: 400px;
+    }
+
+    /* Pricing Card */
+    .pricing-card.highlighted {
+        transform: scale(1.05);
+    }
+}
+
+/* ====================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ==================================== */
+
+@media (hover: none) and (pointer: coarse) {
+
+    /* Buttons */
+    .btn,
+    .nav-link,
+    .glass-card,
+    .filter-btn {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        min-height: 44px;
+    }
+
+    /* Tap feedback */
+    .btn:active,
+    .nav-link:active,
+    .filter-btn:active {
+        opacity: 0.8;
+    }
+
+    /* Remove hover effects on touch */
+    .btn:hover::after,
+    .nav-link:hover::after {
+        width: auto;
+    }
+}
+
+/* ====================================
+   HIGH RESOLUTION DISPLAYS
+   ==================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+    /* Optimize for retina displays */
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Sharper borders */
+    .glass-card,
+    .btn,
+    .filter-btn {
+        border-width: 1px;
+    }
+}
+
+/* ====================================
+   PORTRAIT vs LANDSCAPE
+   ==================================== */
+
+@media (orientation: portrait) {
+    .hero {
+        height: 70vh;
+    }
+
+    .page-hero {
+        height: 300px;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .hero {
+        height: 100vh;
+        margin-top: 60px;
+    }
+
+    .page-hero {
+        height: 250px;
+    }
+
+    section {
+        padding: 2rem 0;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* ====================================
+   PRINT STYLES
+   ==================================== */
+
+@media print {
+
+    .navbar,
+    .hamburger,
+    .btn,
+    .cta-banner,
+    .newsletter {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: black;
+        page-break-after: avoid;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+/* ====================================
+   PREFERED MOTION SETTINGS
+   ==================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    /* Already dark by default, but can add dark mode enhancements */
+    body {
+        background-color: #0E0620;
+    }
+}
+
+/* ====================================
+   LANDSCAPE MODE - MOBILE
+   ==================================== */
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        height: 85vh;
+        margin-top: 50px;
+    }
+
+    .page-hero {
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    section {
+        padding: 2rem 0;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+}
