@@ -8,7 +8,7 @@ All 15 HTML pages are complete and ready. No coding. No waiting. Deploy in minut
 
 ## 📦 What You Have (Ready to Deploy)
 
-Located in `/website-pages/` folder:
+Located in `website-pages/` folder:
 
 ```
 ✅ 01-home.html                 (Homepage)
@@ -99,10 +99,10 @@ Go to **github.com** → Sign up (free)
 
 ### If you don't have time for setup:
 
-1. **Your files are already in:** `/website-pages/`
+1. **Your files are already in:** `website-pages/`
 2. **Just:**
    - Go to netlify.com
-   - Drag-and-drop the `/website-pages/` folder
+   - Drag-and-drop the `website-pages/` folder
    - Site is live in 30 seconds
 
 ---
@@ -135,7 +135,8 @@ Before deploying, verify:
 # To test locally before deploying:
 # From SupenSpa folder:
 python3 -m http.server 8000
-# Then visit: http://localhost:8000/website-pages/01-home.html
+# Then visit: http://localhost:8000/01-home.html (if serving website-pages/)
+# Or: http://localhost:8000/website-pages/01-home.html (if serving from root)
 ```
 
 ---
@@ -211,7 +212,7 @@ python3 -m http.server 8000
 ## 💾 YOUR FILES LOCATION
 
 ```
-/Users/vivanvimleshdwivedi/Vivan-Learning/All-IDE-Projects/SupenSpa/
+/SupenSpa/
 └── website-pages/
     ├── 01-home.html
     ├── 02-about.html
@@ -238,7 +239,7 @@ python3 -m http.server 8000
 
 **5 Minutes - Netlify Drag & Drop:**
 1. Go to netlify.com
-2. Drag `/website-pages/` folder to browser
+2. Drag `website-pages/` folder to browser
 3. Wait 30 seconds
 4. Site is live! 🎉
 

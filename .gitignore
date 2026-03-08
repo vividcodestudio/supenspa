@@ -1,5 +1,27 @@
+# Clean Root Philosophy - Ignoring all non-essential root files
+
+# Environment & Dependencies
 Config/node_modules/
-.DS_Store
-server.log
-Config/.openmcp/
 Config/.vscode/
+Config/.openmcp/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Logs & Temp
+*.log
+Config/server.log
+tmp/
+temp/
+dist/
+build/
+
+# IDEs
+.idea/
+.project
+.settings/
+.vscode/
+
+# Project Specific
+website-pages/assets/css/*.map

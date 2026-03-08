@@ -1,7 +1,17 @@
 # 👑 Supen Spa - Ready to Deploy
 
 **Status:** ✅ FULLY DEPLOYABLE  
-**Date:** February 13, 2026
+**Architecture:** 💎 CLEAN ROOT PHILOSOPHY  
+**Date:** March 8, 2026
+
+---
+
+## 💎 Clean Root Philosophy
+This project follows a **Clean Root** architectural pattern. To maintain maximum clarity and maintainability:
+- **Root**: Contains only the core project identity (`README.md`, `.gitignore`) and primary entry directories.
+- **Config/**: All configuration files, dependencies (`node_modules`), and editor settings.
+- **Docs/**: All documentation, deployment guides, and progress logs.
+- **website-pages/**: The actual production-ready website files and assets.
 
 ---
 
@@ -115,24 +125,18 @@ Pick ONE option:
 
 ## 🔧 Customizing Before Launch
 
-Need to change anything?
+Need to change anything? All edits should be made within the `website-pages/` directory.
 
 **Update Phone Number:**
-1. Find & replace `919819893901` with your actual WhatsApp number
-2. Find & replace `+91 98198 93901` with formatted number
-3. Find & replace `98198 93912` with your backup phone
+1. Use VS Code "Find in Files" (Cmd+Shift+F)
+2. Search for `919819893901` and replace with your WhatsApp number
+3. Search for `+91 98198 93901` and update the display text
 
-**Update Email:**
-1. Find & replace `hello@supenspa.com` with your email
+**Update Email/Location:**
+1. Search across files for `hello@supenspa.com` or `Bandra, Mumbai` and replace as needed.
 
-**Update Location:**
-1. Find & replace `Bandra, Mumbai` with your location
-
-**Update Business Hours:**
-1. Find `6 AM - 10 PM` in files and update
-2. Find any other time references
-
-Use VS Code Find & Replace (Cmd+H) to do this across all files instantly.
+> [!TIP]
+> Use VS Code Find & Replace (Cmd+Shift+H) focused on the `website-pages/` folder to apply changes globally.
 
 ---
 
