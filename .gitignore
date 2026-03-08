@@ -14,8 +14,6 @@ Thumbs.db
 Config/server.log
 tmp/
 temp/
-dist/
-build/
 
 # IDEs
 .idea/
@@ -25,6 +23,23 @@ build/
 
 # Project Specific
 website-pages/assets/css/*.map
+
+# Large Media Files (exceed GitHub 100MB limit)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Legacy asset folder with heavy originals
+website-pages/assets/Supen-Spa\ Assets/
+website-pages/assets/images/Supen-Spa.zip
+website-pages/assets/images/Supen\ Video-*.mp4
+website-pages/assets/images/Thai-Spa-Message-Video.mp4
 
 # Clean Root Enforcement - Proactively ignore misplaced files in root
 # (Forces developers to move them to Config/)

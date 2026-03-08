@@ -4,6 +4,7 @@
 
 // ===== DOCUMENT READY =====
 document.addEventListener('DOMContentLoaded', function () {
+    initNavbarScroll();
     initHamburgerMenu();
     initGalleryFilter();
     initFormHandling();
@@ -12,11 +13,28 @@ document.addEventListener('DOMContentLoaded', function () {
     initScrollAnimations();
 });
 
+// ===== NAVBAR SCROLL EFFECT =====
+function initNavbarScroll() {
+    const navbar = document.querySelector('.navbar');
+
+    function updateNavbar() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }
+
+    window.addEventListener('scroll', updateNavbar);
+    updateNavbar(); // Check on load
+}
+
 // ===== HAMBURGER MENU FUNCTIONALITY =====
 function initHamburgerMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
+    const dropDowns = document.querySelectorAll('.nav-item-dropdown');
 
     if (!hamburger) return;
 
@@ -26,12 +44,25 @@ function initHamburgerMenu() {
         navMenu.classList.toggle('active');
     });
 
+    // Handle mobile dropdowns
+    dropDowns.forEach(dropdown => {
+        const link = dropdown.querySelector('.nav-link');
+        link.addEventListener('click', function (e) {
+            if (window.innerWidth <= 992) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            }
+        });
+    });
+
     // Close menu when a link is clicked
     navLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
+        if (!link.parentElement.classList.contains('nav-item-dropdown')) {
+            link.addEventListener('click', function () {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        }
     });
 
     // Close menu when clicking outside
@@ -156,7 +187,7 @@ function handleContactForm() {
 // Handle booking form submission
 function handleBookingForm() {
     const form = document.querySelector('form') || document.querySelector('.booking-form-element');
-    
+
     if (!form) return;
 
     const name = form.querySelector('input[name="name"]')?.value;
@@ -185,7 +216,7 @@ function showConfirmationModal() {
     const modal = document.getElementById('confirmationModal');
     if (modal) {
         modal.style.display = 'flex';
-        
+
         // Close modal when clicking the close button
         const closeBtn = modal.querySelector('.close-modal');
         if (closeBtn) {
@@ -383,7 +414,7 @@ function setActiveNavLink() {
 
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href === currentLocation || 
+        if (href === currentLocation ||
             (currentLocation.includes(href) && href !== 'index.html')) {
             link.classList.add('active');
         } else {
@@ -580,34 +611,10 @@ function addPageTransition() {
 
 addPageTransition();
 
-// ===== ACCESSIBILITY ENHANCEMENTS =====
-function initAccessibility() {
-    // Add keyboard navigation for buttons
-    const buttons = document.querySelectorAll('button, [role="button"], .btn');
-    
-    buttons.forEach(button => {
-        button.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                this.click();
-            }
-        });
-    });
-
-    // Add skip to main content link
-    const skipLink = document.createElement('a');
-    skipLink.href = '#main-content';
-    skipLink.className = 'skip-to-main';
-    skipLink.textContent = 'Skip to main content';
-    document.body.insertBefore(skipLink, document.body.firstChild);
-}
-
-initAccessibility();
-
 // ===== DARK MODE TOGGLE (Optional) =====
 function initDarkModeToggle() {
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    
+
     if (prefersDarkScheme.matches) {
         document.body.classList.add('dark-mode');
     }

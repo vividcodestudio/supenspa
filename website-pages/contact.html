@@ -5,474 +5,269 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Contact Supen Spa — Bandra, Mumbai. Connect via WhatsApp for fastest response. Premium wellness booking, Email & Phone support available.">
-    <meta name="keywords" content="contact supen spa, spa booking mumbai, spa whatsapp booking, luxury spa contact">
-    <title>Contact Us | Supen Spa — Premium Wellness Sanctuary</title>
+        content="Contact Supen Spa via WhatsApp, call, or email. Located in Bandra West, Mumbai. Open daily 6 AM – 10 PM. Book your premium wellness session.">
+    <title>Contact Supen Spa – Book Your Session | Bandra Mumbai</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <style>
-        body {
-            margin-top: 0;
-            padding-top: 80px;
-        }
+    <link rel="icon" type="image/png" href="assets/images/Supen-Spa-Logo.png">
 
-        .site-header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        /* Contact-specific overrides */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto 3rem;
-            padding: 0 2rem;
-        }
-
-        .contact-card {
-            background: rgba(26, 11, 46, 0.58);
-            border: 1px solid rgba(255, 215, 0, 0.18);
-            border-radius: 18px;
-            padding: 2.5rem;
-            text-align: center;
-            backdrop-filter: blur(16px) saturate(160%);
-            -webkit-backdrop-filter: blur(16px) saturate(160%);
-            box-shadow: inset 0 1px 0 rgba(255, 215, 0, 0.22), 0 4px 24px rgba(0, 0, 0, 0.45);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.4), transparent);
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: inset 0 1px 0 rgba(255, 215, 0, 0.3), 0 0 28px rgba(255, 215, 0, 0.18), 0 8px 32px rgba(0, 0, 0, 0.55);
-        }
-
-        .contact-card .card-icon {
-            width: 64px;
-            height: 64px;
-            background: rgba(124, 77, 255, 0.15);
-            border: 1px solid rgba(179, 157, 219, 0.25);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            color: #B39DDB;
-            margin: 0 auto 1.2rem;
-            transition: 0.3s ease;
-        }
-
-        .contact-card:hover .card-icon {
-            color: #FFD700;
-            background: rgba(255, 215, 0, 0.12);
-            border-color: rgba(255, 215, 0, 0.3);
-            box-shadow: 0 0 16px rgba(255, 215, 0, 0.3);
-        }
-
-        .contact-card h2 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #FFD700;
-            margin-bottom: 0.8rem;
-        }
-
-        .contact-card .phone-number {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #FFD700;
-            margin: 0.8rem 0;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        .contact-card p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-            line-height: 1.7;
-            margin: 0.4rem 0;
-        }
-
-        .contact-card .btn-wa {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.65rem 1.5rem;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: 0.3s ease;
-            margin-top: 1.2rem;
-            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
-        }
-
-        .contact-card .btn-wa:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45);
-            color: #fff;
-        }
-
-        .contact-card .btn-call {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.65rem 1.5rem;
-            background: linear-gradient(135deg, #FFD700 0%, #F0B90B 100%);
-            color: #0E0620;
-            border: none;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: 0.3s ease;
-            margin-top: 1.2rem;
-            box-shadow: 0 4px 14px rgba(255, 215, 0, 0.25);
-        }
-
-        .contact-card .btn-call:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 22px rgba(255, 215, 0, 0.4);
-            color: #0E0620;
-        }
-
-        .info-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto 3rem;
-            padding: 0 2rem;
-        }
-
-        .info-box {
-            background: rgba(26, 11, 46, 0.5);
-            border: 1px solid rgba(255, 215, 0, 0.15);
-            border-radius: 14px;
-            padding: 1.8rem;
-            backdrop-filter: blur(12px);
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .info-box .icon {
-            font-size: 1.4rem;
-            color: #FFD700;
-            min-width: 36px;
-            text-align: center;
-            margin-top: 2px;
-        }
-
-        .info-box h4 {
-            color: #FFD700;
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-        }
-
-        .info-box p {
-            color: rgba(255, 255, 255, 0.72);
-            font-size: 0.88rem;
-            line-height: 1.6;
-        }
-
-        .hours-box {
-            background: rgba(26, 11, 46, 0.5);
-            border: 1px solid rgba(255, 215, 0, 0.15);
-            border-radius: 18px;
-            padding: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto 3rem;
-            padding-left: 2rem;
-            padding-right: 2rem;
-            backdrop-filter: blur(14px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .hours-box h3 {
-            color: #FFD700;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .hours-box p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-        }
-
-        .hours-badge {
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 30px;
-            padding: 0.5rem 1.4rem;
-            color: #FFD700;
-            font-weight: 700;
-            font-size: 0.95rem;
-            white-space: nowrap;
-        }
-
-        .cta-section-contact {
-            text-align: center;
-            max-width: 1200px;
-            margin: 0 auto 3rem;
-            padding: 3rem 2rem;
-            background: rgba(26, 11, 46, 0.45);
-            border: 1px solid rgba(255, 215, 0, 0.15);
-            border-radius: 20px;
-            backdrop-filter: blur(14px);
-        }
-
-        .cta-section-contact h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            background: linear-gradient(90deg, #FFD700, #B39DDB, #00E5FF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section-contact p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-section-wrap {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .section-title-contact {
-            text-align: center;
-            font-size: 2.2rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, #FFD700, #FFE55C, #B39DDB);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.6rem;
-        }
-
-        .section-sub-contact {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hours-box {
-                flex-direction: column;
-                padding: 1.8rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header class="site-header" role="banner">
-        <div class="container">
-            <div
-                style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; gap: 2rem;">
-                <div class="site-title"><a href="index.html" aria-label="Supen Spa Home">Supen <span>SPA</span></a>
-                </div>
-                <nav aria-label="Main navigation"
-                    style="flex: 1; display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="contact.html" style="color: #FFD700;">Contact</a>
-                </nav>
-                <a href="https://wa.me/919819893901" target="_blank" rel="noopener" class="btn-wa"
-                    style="display:inline-flex;align-items:center;gap:0.45rem;padding:0.55rem 1.2rem;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border-radius:10px;font-weight:700;font-size:0.88rem;text-decoration:none;white-space:nowrap;box-shadow:0 4px 14px rgba(37,211,102,0.3);">
-                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Book Now
+
+
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/images/Supen-Spa-Logo.png" alt="Supen Spa Logo" class="logo-img">
                 </a>
             </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <div class="nav-item-dropdown">
+                    <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="nested-pages/aromatherapy.html" class="dropdown-item"><i class="fas fa-leaf"
+                                style="color:#FFD700;width:18px;"></i> Aromatherapy Royal Ritual</a>
+                        <a href="nested-pages/deep-tissue.html" class="dropdown-item"><i class="fas fa-fire"
+                                style="color:#FFD700;width:18px;"></i> Deep Tissue & Restoration</a>
+                        <a href="nested-pages/hot-stone.html" class="dropdown-item"><i class="fas fa-sun"
+                                style="color:#FFD700;width:18px;"></i> Hot Stone Therapy Royal</a>
+                        <a href="nested-pages/thai-massage.html" class="dropdown-item"><i class="fas fa-yin-yang"
+                                style="color:#FFD700;width:18px;"></i> Thai Dry Massage</a>
+                        <a href="nested-pages/swedish.html" class="dropdown-item"><i class="fas fa-spa"
+                                style="color:#FFD700;width:18px;"></i> Swedish Massage</a>
+                        <a href="nested-pages/balinese.html" class="dropdown-item"><i class="fas fa-wind"
+                                style="color:#FFD700;width:18px;"></i> Balinese Massage</a>
+                        <a href="nested-pages/body-scrub.html" class="dropdown-item"><i class="fas fa-seedling"
+                                style="color:#FFD700;width:18px;"></i> Body Scrub & Renewal</a>
+                        <a href="nested-pages/couples.html" class="dropdown-item"><i class="fas fa-heart"
+                                style="color:#FFD700;width:18px;"></i> Couples Royal Retreat</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="nested-pages/signature.html" class="dropdown-item"
+                            style="color:#FFD700; font-weight:700;"><i class="fas fa-crown" style="width:18px;"></i> ✦
+                            Signature Royal Ritual</a>
+                    </div>
+                </div>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <a href="book-now.html" class="nav-link cta-nav"><i class="fab fa-whatsapp"></i> Book Now</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <a href="https://wa.me/919819893901" target="_blank" class="whatsapp-floating"><i class="fab fa-whatsapp"></i></a>
+
+
+    <header class="page-hero">
+        <div class="page-hero-background">
+            <div class="hero-overlay-dark"
+                style="background: linear-gradient(rgba(14, 6, 32, 0.45) 0%, rgba(14, 6, 32, 0.75) 100%);"></div>
+        </div>
+        <div class="page-hero-content">
+            <h1 class="page-hero-title">Connect with Tranquility</h1>
+            <p class="page-hero-subtitle">Book Your Private Escape in Bandra</p>
         </div>
     </header>
 
-    <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/919819893901?text=Hello%20Supen%20Spa%2C%20I%20would%20like%20to%20connect." target="_blank"
-        rel="noopener" class="whatsapp-floating" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    </a>
 
-    <!-- HERO -->
-    <section class="hero-section-half hero-contact" aria-labelledby="contact-hero-heading">
-        <div class="hero-content">
-            <p class="hero-subtitle">Get In Touch</p>
-            <h1 id="contact-hero-heading">Connect With Our Wellness Team</h1>
-            <p class="lead-text">Fastest response via WhatsApp. We're here to guide your royal wellness journey every
-                step of the way.</p>
+
+    <section class="scroll-reveal" style="padding:var(--spacing-2xl) 0;">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="glass-card" style="margin-bottom:1.5rem;">
+                        <div class="hero-badge" style="margin-bottom: 1.5rem;"><i class="fas fa-map-marker-alt"></i>
+                            Location</div>
+                        <h3>Private Sanctuary</h3>
+                        <p style="color:var(--color-white); font-size:1.1rem; line-height:1.8; margin-bottom:1.5rem;">
+                            Bandra West<br>Mumbai, Maharashtra<br>India 400050</p>
+                        <a href="https://maps.google.com/?q=Bandra+West+Mumbai" target="_blank"
+                            class="btn btn-secondary"><i class="fas fa-directions"></i> Get Directions</a>
+                    </div>
+                    <div class="glass-card" style="margin-bottom:1.5rem;">
+                        <div class="hero-badge" style="margin-bottom: 1.5rem;"><i class="fas fa-clock"></i> Availability
+                        </div>
+                        <div style="display:flex; justify-content:space-between; margin-bottom:0.8rem;">
+                            <span style="color:rgba(255,255,255,0.7);">Monday – Sunday</span>
+                            <span style="color:var(--color-gold); font-weight:700;">6:00 AM – 10:00 PM</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between;">
+                            <span style="color:rgba(255,255,255,0.7);">Public Holidays</span>
+                            <span style="color:var(--color-gold); font-weight:700;">Open (Call First)</span>
+                        </div>
+                    </div>
+                    <div class="glass-card">
+                        <div class="hero-badge" style="margin-bottom: 1.5rem;"><i class="fas fa-headset"></i> Concierge
+                        </div>
+                        <a href="https://wa.me/919819893901" target="_blank" class="contact-method-link">
+                            <div class="method-icon wa"><i class="fab fa-whatsapp"></i></div>
+                            <div class="method-details">
+                                <strong>WhatsApp (Preferred)</strong>
+                                <span>+91 98198 93901 · Instant Response</span>
+                            </div>
+                        </a>
+                        <a href="tel:+919819893901" class="contact-method-link">
+                            <div class="method-icon phone"><i class="fas fa-phone"></i></div>
+                            <div class="method-details">
+                                <strong>Phone Call</strong>
+                                <span>+91 98198 93901 · 6 AM – 10 PM</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <div class="glass-card">
+                        <div class="hero-badge" style="margin-bottom: 1.5rem;"><i class="fab fa-whatsapp"></i> Reserve
+                            Now</div>
+                        <h3 style="margin-bottom:1rem;">Your Wellness Journey</h3>
+                        <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; margin-bottom:2rem;">Submit the form
+                            below and it will open directly in WhatsApp for an instant booking experience.</p>
+
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" placeholder="E.g. Siddharth Malhotra" id="ctName">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" id="ctPhone">
+                        </div>
+                        <div class="form-group">
+                            <label>Desired Ritual</label>
+                            <select class="form-control" id="ctService">
+                                <option value="">Select a wellness ritual...</option>
+                                <option>Signature Royal Ritual – ₹20,000</option>
+                                <option>Aromatherapy Royal Ritual – ₹3,500</option>
+                                <option>Deep Tissue & Restoration – ₹3,000</option>
+                                <option>Hot Stone Therapy Royal – ₹3,800</option>
+                                <option>Thai Dry Massage – ₹3,500</option>
+                                <option>Swedish Massage – ₹3,000</option>
+                                <option>Balinese Massage – ₹3,500</option>
+                                <option>Body Scrub & Renewal – ₹4,500</option>
+                                <option>Couples Royal Retreat – ₹7,500</option>
+                                <option>Unsure – Need Consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Date & Time</label>
+                            <input type="text" class="form-control" placeholder="E.g. Tomorrow at 5 PM" id="ctTime">
+                        </div>
+                        <div class="form-group">
+                            <label>Special Requests</label>
+                            <textarea class="form-control" rows="3" placeholder="Any details for your therapist?"
+                                id="ctMsg"></textarea>
+                        </div>
+
+                        <button class="btn btn-primary" style="width:100%; justify-content:center; margin-top:1rem;"
+                            onclick="sendContactWA()">
+                            <i class="fab fa-whatsapp"></i> Open WhatsApp to Confirm
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- CONTACT CARDS -->
-    <div class="contact-section-wrap">
-        <h2 class="section-title-contact">Reach Us Anytime</h2>
-        <p class="section-sub-contact">Choose your preferred way to connect — we respond within the hour.</p>
-
-        <div class="contact-grid">
-            <div class="contact-card">
-                <div class="card-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
-                <h2>WhatsApp (Recommended)</h2>
-                <div class="phone-number">+91 98198 93901</div>
-                <p>Real-time chat with our booking team</p>
-                <p>Response within 1 hour &bull; Secure &amp; Private</p>
-                <a href="https://wa.me/919819893901?text=Hello%20Supen%20Spa%2C%20I%20would%20like%20to%20explore%20your%20services."
-                    target="_blank" rel="noopener" class="btn-wa" aria-label="Open WhatsApp to chat with Supen Spa">
-                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Open WhatsApp
-                </a>
-            </div>
-
-            <div class="contact-card">
-                <div class="card-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
-                <h2>Traditional Contact</h2>
-                <div class="phone-number" style="color: #B39DDB;">+91 98198 93912</div>
-                <p><i class="fas fa-envelope" aria-hidden="true" style="color:#FFD700;margin-right:0.4rem;"></i>
-                    hello@supenspa.com</p>
-                <p><i class="fas fa-map-marker-alt" aria-hidden="true" style="color:#FFD700;margin-right:0.4rem;"></i>
-                    Bandra, Mumbai, Maharashtra</p>
-                <a href="tel:+919819893912" class="btn-call" aria-label="Call Supen Spa">
-                    <i class="fas fa-phone-alt" aria-hidden="true"></i> Call Now
-                </a>
-            </div>
-        </div>
-
-        <!-- Info Row -->
-        <div class="info-row">
-            <div class="info-box">
-                <div class="icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
-                <div>
-                    <h4>Operating Hours</h4>
-                    <p>Daily: 6:00 AM – 10:00 PM<br>Same-day appointments available</p>
-                </div>
-            </div>
-            <div class="info-box">
-                <div class="icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
-                <div>
-                    <h4>Response Time</h4>
-                    <p>WhatsApp: Within 1 hour<br>Email: Within 24 hours</p>
-                </div>
-            </div>
-            <div class="info-box">
-                <div class="icon"><i class="fas fa-lock" aria-hidden="true"></i></div>
-                <div>
-                    <h4>100% Private</h4>
-                    <p>All conversations are confidential. We protect your privacy completely.</p>
-                </div>
-            </div>
-            <div class="info-box">
-                <div class="icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
-                <div>
-                    <h4>Location</h4>
-                    <p>Bandra West, Mumbai<br>Maharashtra, India</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Hours Banner -->
-        <div class="hours-box">
-            <div>
-                <h3><i class="fas fa-calendar-check" aria-hidden="true" style="margin-right:0.5rem;"></i> Hours &amp;
-                    Availability</h3>
-                <p>6:00 AM – 10:00 PM &bull; Every day, including weekends &amp; holidays</p>
-                <p style="margin-top:0.4rem; color: rgba(255,215,0,0.7);">✓ Same-day bookings &bull; ✓ Typically respond
-                    within 1 hour</p>
-            </div>
-            <div class="hours-badge"><i class="fas fa-circle"
-                    style="color:#25D366;font-size:0.6rem;margin-right:0.4rem;" aria-hidden="true"></i> Available Now
-            </div>
-        </div>
-
-        <!-- CTA -->
-        <div class="cta-section-contact">
-            <h2>Ready to Begin Your Wellness Journey?</h2>
-            <p>Connect with our wellness experts via WhatsApp for instant booking and personalized recommendations.</p>
-            <a href="https://wa.me/919819893901?text=Hello%20Supen%20Spa%2C%20I%20am%20ready%20to%20begin%20my%20wellness%20journey%20and%20would%20like%20to%20book%20a%20session."
-                target="_blank" rel="noopener" class="btn-wa"
-                style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2.2rem;font-size:1.05rem;border-radius:12px;"
-                aria-label="Book your session via WhatsApp">
-                <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us Now
-            </a>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="site-footer" role="contentinfo">
+    <section class="scroll-reveal" style="padding:0 0 var(--spacing-2xl);">
         <div class="container">
-            <div class="footer-widgets">
-                <div class="footer-widget">
-                    <h3>Supen Spa</h3>
-                    <p>Private royal wellness sanctuary for elite clientele seeking deep restoration through
-                        professional luxury massage therapy.</p>
-                </div>
-                <div class="footer-widget">
-                    <h3>Quick Links</h3>
-                    <ul style="list-style:none;padding:0;">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                    </ul>
-                </div>
-                <div class="footer-widget">
-                    <h3>Contact</h3>
-                    <p><a href="tel:+919819893901">+91 98198 93901</a></p>
-                    <p><a href="mailto:hello@supenspa.com">hello@supenspa.com</a></p>
-                    <p>Bandra, Mumbai</p>
-                </div>
-                <div class="footer-widget">
-                    <h3>Book Now</h3>
-                    <a href="https://wa.me/919819893901" target="_blank" rel="noopener" class="btn-wa"
-                        style="display:inline-flex;align-items:center;gap:0.45rem;padding:0.6rem 1.2rem;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border-radius:10px;font-weight:700;font-size:0.88rem;text-decoration:none;box-shadow:0 4px 14px rgba(37,211,102,0.3);width:100%;justify-content:center;"
-                        aria-label="Book via WhatsApp">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                    </a>
+            <div class="section-header">
+                <h2 class="section-title">Find Us</h2>
+                <p class="section-subtitle">Conveniently located in the heart of Bandra West, Mumbai</p>
+                <div class="gold-divider"></div>
+            </div>
+            <div class="map-container" style="margin-top:2rem;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.9077437717!2d72.8219!3d19.0596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9b888ae67fd%3A0x99f58a3c05aa98a5!2sBandra%20West%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1&maptype=0&style=feature:all|element:labels.text.fill|color:0xffd700&style=feature:all|element:geometry|color:0x1a0b2e"
+                    width="100%" height="360" style="border:0;" allowfullscreen loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+    <script>
+        function sendContactWA() {
+            const name = document.getElementById('ctName').value || '';
+            const phone = document.getElementById('ctPhone').value || '';
+            const service = document.getElementById('ctService').value || 'a session';
+            const time = document.getElementById('ctTime').value || '';
+            const msg = document.getElementById('ctMsg').value || '';
+            let text = `Hello Supen Spa, I would like to book ${service}.`;
+            if (name) text += ` My name is ${name}.`;
+            if (phone) text += ` My number is ${phone}.`;
+            if (time) text += ` Preferred time: ${time}.`;
+            if (msg) text += ` ${msg}`;
+            window.open('https://wa.me/919819893901?text=' + encodeURIComponent(text), '_blank');
+        }
+    </script>
+
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="assets/images/Supen-Spa-Logo.png" alt="Supen Spa" style="width:140px; margin-bottom:1.5rem;">
+                <p>Mumbai's most exclusive private wellness sanctuary. Where ancient healing wisdom meets modern royal
+                    luxury.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Supen Spa. All rights reserved. Luxury reimagined.</p>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="services.html">Rituals</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
             </div>
+            <div class="footer-section">
+                <h4>Wellness Rituals</h4>
+                <ul>
+                    <li><a href="nested-pages/signature.html">Signature Ritual</a></li>
+                    <li><a href="nested-pages/aromatherapy.html">Aromatherapy</a></li>
+                    <li><a href="nested-pages/deep-tissue.html">Deep Tissue</a></li>
+                    <li><a href="nested-pages/thai-massage.html">Thai Dry Massage</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Private Sanctuary</h4>
+                <p><i class="fas fa-map-marker-alt" style="color:#FFD700; margin-right:8px;"></i> Bandra West, Mumbai
+                </p>
+                <p><i class="fas fa-phone-alt" style="color:#FFD700; margin-right:8px;"></i> +91 98198 93901</p>
+                <p><i class="fas fa-envelope" style="color:#FFD700; margin-right:8px;"></i> info@supenspa.com</p>
+                <p><i class="fas fa-clock" style="color:#FFD700; margin-right:8px;"></i> 6:00 AM – 10:00 PM Daily</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Supen Spa. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a></p>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+
+
+
+    <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
