@@ -9,31 +9,29 @@
 
 ```
 SupenSpa/
-├── 📄 DEPLOY-NOW.md          → Deployment instructions (READ THIS!)
-├── 📄 README.md              → This file
-├── 📄 index.html             → Entry point (redirects to homepage)
+├── 📄 .gitignore             → Git ignore rules
+├── 📄 README.md              → This file (Master README)
 │
-├── 📁 website-pages/         → ALL FINAL HTML PAGES (15 complete pages)
-│   ├── 01-home.html                    ✅ Homepage
-│   ├── 02-about.html                   ✅ About page
-│   ├── 03-services.html                ✅ Services overview
-│   ├── 04-01-aromatherapy.html         ✅ Aromatherapy detail
-│   ├── 04-02-deep-tissue.html          ✅ Deep Tissue detail
-│   ├── 04-03-hot-stone.html            ✅ Hot Stone detail
-│   ├── 04-04-thai-massage.html         ✅ Thai Massage detail
-│   ├── 04-05-swedish.html              ✅ Swedish detail
-│   ├── 04-06-balinese.html             ✅ Balinese detail
-│   ├── 04-07-body-scrub.html           ✅ Body Scrub detail
-│   ├── 04-08-couples.html              ✅ Couples detail
-│   ├── 04-09-signature.html            ✅ Signature detail
-│   ├── 05-pricing.html                 ✅ Pricing page
-│   ├── 07-contact.html                 ✅ Contact page
-│   └── 08-book-now.html                ✅ Booking page
+├── 📁 Config/                → Configuration & Dependencies
+│   ├── 📁 node_modules/      → Project dependencies (Ignored)
+│   ├── 📄 package.json       → Node configuration
+│   ├── 📄 package-lock.json  → Lock file
+│   ├── 📁 .vscode/           → Editor settings
+│   └── 📁 .openmcp/          → MCP configuration
 │
-└── 📁 assets/                → CSS, Images, Fonts
-    ├── css/
-    ├── images/
-    └── js/
+├── 📁 Docs/                  → Project Documentation
+│   ├── 📄 DEPLOY-NOW.md      → Deployment instructions
+│   └── 📄 PROGRESS.md        → Development progress
+│
+└── 📁 website-pages/         → ALL FINAL HTML PAGES & ASSETS
+    ├── 📄 index.html         → Entry point (main page)
+    ├── 📁 assets/            → CSS, Images, Fonts, JS
+    │   ├── css/
+    │   ├── images/
+    │   └── js/
+    ├── 01-home.html          ✅ Homepage
+    ├── 02-about.html         ✅ About page
+    ├── ... (and 13 other pages)
 ```
 
 ---
@@ -70,6 +68,7 @@ Pick ONE option:
 
 | File/Folder | Purpose |
 |-------------|---------|
+| `website-pages/index.html` | Entry point (redirects to homepage) |
 | `website-pages/01-home.html` | Landing page with hero, services, testimonials |
 | `website-pages/02-about.html` | Brand story and philosophy |
 | `website-pages/03-services.html` | All 9 services overview |
@@ -77,10 +76,9 @@ Pick ONE option:
 | `website-pages/05-pricing.html` | Pricing & membership packages |
 | `website-pages/07-contact.html` | Contact information |
 | `website-pages/08-book-now.html` | Booking process & FAQ |
-| `assets/css/` | All styling (dark theme, gold accents) |
-| `assets/images/` | Logo, images |
-| `index.html` | Redirect to homepage |
-| `DEPLOY-NOW.md` | Detailed deployment guide |
+| `website-pages/assets/` | Site assets (CSS, JS, Images) |
+| `Config/` | Development & environment configs |
+| `Docs/` | Project documentation |
 
 ---
 
@@ -208,11 +206,11 @@ Once site is live:
 - On mobile, opens WhatsApp app
 
 **Images missing**
-- Verify `assets/images/` uploaded
+- Verify `website-pages/assets/images/` uploaded
 - Check image file paths in HTML
 
 **Styling looks broken**
-- Ensure `assets/css/` folder uploaded
+- Ensure `website-pages/assets/css/` folder uploaded
 - Clear browser cache (Cmd+Shift+R)
 - Check file permissions
 
@@ -234,7 +232,7 @@ These are displayed throughout the site.
 
 Everything needed for a professional, launch-ready website is in this folder.
 
-**Next Step:** Read [DEPLOY-NOW.md](DEPLOY-NOW.md) for your hosting platform instructions.
+**Next Step:** Read [Docs/DEPLOY-NOW.md](Docs/DEPLOY-NOW.md) for your hosting platform instructions.
 
 **Estimated time to live:** 3 minutes ⚡
 
