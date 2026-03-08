@@ -7,11 +7,14 @@
 ---
 
 ## 💎 Clean Root Philosophy
-This project follows a **Clean Root** architectural pattern. To maintain maximum clarity and maintainability:
-- **Root**: Contains only the core project identity (`README.md`, `.gitignore`) and primary entry directories.
-- **Config/**: All configuration files, dependencies (`node_modules`), and editor settings.
+This project follows a **Strict Clean Root** architectural pattern. To maintain maximum clarity and maintainability:
+- **Root**: Contains ONLY the core project identity (`README.md`, `.gitignore`) and primary entry directories (`website-pages/`, `Config/`, `Docs/`).
+- **Config/**: **MANDATORY** location for ALL configuration files, dependencies (`node_modules`), environmental logs (`server.log`), and editor settings. No config or log files are permitted in the root.
 - **Docs/**: All documentation, deployment guides, and progress logs.
 - **website-pages/**: The actual production-ready website files and assets.
+
+> [!IMPORTANT]
+> **Strict Reorganization Rule**: Any new configuration, metadata, or log files MUST be placed in the `Config/` directory immediately.
 
 ---
 

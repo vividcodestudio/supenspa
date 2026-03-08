@@ -25,3 +25,13 @@ build/
 
 # Project Specific
 website-pages/assets/css/*.map
+
+# Clean Root Enforcement - Proactively ignore misplaced files in root
+# (Forces developers to move them to Config/)
+/*.log
+/*.json
+/*.config
+/*.lock
+/*.yaml
+/*.yml
+/*.xml
