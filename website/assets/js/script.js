@@ -2,6 +2,127 @@
    SUPEN SPA - MAIN JAVASCRIPT
    ==================================== */
 
+/* ====================================
+   🔒 SOURCE PROTECTION — DO NOT MODIFY
+   ==================================== */
+(function () {
+    'use strict';
+
+    // ── 1. Disable Right-Click Context Menu ──
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+        return false;
+    });
+
+    // ── 2. Block Keyboard Shortcuts ──
+    document.addEventListener('keydown', function (e) {
+        const key = e.key || e.keyCode;
+        const ctrl = e.ctrlKey || e.metaKey; // metaKey = Cmd on Mac
+
+        // F12 — DevTools
+        if (key === 'F12' || e.keyCode === 123) {
+            e.preventDefault(); return false;
+        }
+
+        if (ctrl) {
+            // Ctrl+Shift+I — DevTools (Inspect)
+            if (e.shiftKey && (key === 'I' || key === 'i' || e.keyCode === 73)) {
+                e.preventDefault(); return false;
+            }
+            // Ctrl+Shift+J — DevTools (Console)
+            if (e.shiftKey && (key === 'J' || key === 'j' || e.keyCode === 74)) {
+                e.preventDefault(); return false;
+            }
+            // Ctrl+Shift+C — DevTools (Inspect Element)
+            if (e.shiftKey && (key === 'C' || key === 'c' || e.keyCode === 67)) {
+                e.preventDefault(); return false;
+            }
+            // Ctrl+U — View Page Source
+            if (key === 'U' || key === 'u' || e.keyCode === 85) {
+                e.preventDefault(); return false;
+            }
+            // Ctrl+S — Save Page
+            if (key === 'S' || key === 's' || e.keyCode === 83) {
+                e.preventDefault(); return false;
+            }
+            // Ctrl+P — Print
+            if (key === 'P' || key === 'p' || e.keyCode === 80) {
+                e.preventDefault(); return false;
+            }
+            // Ctrl+A — Select All
+            if (key === 'A' || key === 'a' || e.keyCode === 65) {
+                e.preventDefault(); return false;
+            }
+            // Ctrl+C — Copy (blocks copying selected text)
+            if (!e.shiftKey && (key === 'C' || key === 'c' || e.keyCode === 67)) {
+                e.preventDefault(); return false;
+            }
+        }
+    });
+
+    // ── 3. Disable Text Selection ──
+    document.addEventListener('selectstart', function (e) {
+        e.preventDefault(); return false;
+    });
+
+    // ── 4. Disable Drag (prevents image dragging/saving) ──
+    document.addEventListener('dragstart', function (e) {
+        e.preventDefault(); return false;
+    });
+
+    // ── 5. DevTools Detection — Window Size Method ──
+    // When DevTools opens, it reduces inner window size. This detects the gap.
+    var _devToolsOpen = false;
+    var _threshold = 160;
+
+    function _checkDevTools() {
+        var widthDiff = window.outerWidth - window.innerWidth;
+        var heightDiff = window.outerHeight - window.innerHeight;
+
+        if (widthDiff > _threshold || heightDiff > _threshold) {
+            if (!_devToolsOpen) {
+                _devToolsOpen = true;
+                // Blur the page content
+                document.body.style.filter = 'blur(20px)';
+                document.body.style.pointerEvents = 'none';
+                document.body.style.userSelect = 'none';
+            }
+        } else {
+            if (_devToolsOpen) {
+                _devToolsOpen = false;
+                document.body.style.filter = '';
+                document.body.style.pointerEvents = '';
+                document.body.style.userSelect = '';
+            }
+        }
+    }
+
+    setInterval(_checkDevTools, 1000);
+    window.addEventListener('resize', _checkDevTools);
+
+    // ── 6. Disable Print via media events ──
+    window.addEventListener('beforeprint', function (e) {
+        document.body.style.display = 'none';
+    });
+    window.addEventListener('afterprint', function (e) {
+        document.body.style.display = '';
+    });
+
+    // ── 7. CSS-level: no user-select, no drag ──
+    var style = document.createElement('style');
+    style.innerHTML = [
+        '* { -webkit-user-select: none !important; -moz-user-select: none !important;',
+        '    -ms-user-select: none !important; user-select: none !important; }',
+        'input, textarea, select { -webkit-user-select: text !important;',
+        '    -moz-user-select: text !important; user-select: text !important; }',
+        'img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }',
+    ].join('\n');
+    document.head.appendChild(style);
+
+})();
+/* ── End Source Protection ── */
+
+
 // ===== DOCUMENT READY =====
 document.addEventListener('DOMContentLoaded', function () {
     initNavbarScroll();
