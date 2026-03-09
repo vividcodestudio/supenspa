@@ -1,9 +1,0 @@
-# Supen Spa – Netlify Configuration
-
-[build]
-  publish = "website"
-
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
