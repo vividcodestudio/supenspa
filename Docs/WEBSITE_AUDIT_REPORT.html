@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supen Spa — Website Audit Report</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a1a;
+            --surface: #111128;
+            --surface-2: #191938;
+            --border: rgba(255, 255, 255, 0.06);
+            --text: #e4e4f0;
+            --text-dim: #8888aa;
+            --gold: #FFD700;
+            --red: #FF4444;
+            --orange: #FF8C00;
+            --green: #22c55e;
+            --blue: #3b82f6;
+            --purple: #a855f7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .report-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.08), rgba(168, 85, 247, 0.08));
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            margin-bottom: 3rem;
+        }
+
+        .report-header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gold), var(--orange));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .report-header .subtitle {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .meta-strip {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .meta-item .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .meta-item .dot.red {
+            background: var(--red);
+        }
+
+        .meta-item .dot.green {
+            background: var(--green);
+        }
+
+        .meta-item .dot.orange {
+            background: var(--orange);
+        }
+
+        /* Score Card */
+        .score-card {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .score-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .score-item .score-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .score-item .score-label {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.3rem;
+        }
+
+        .score-red {
+            color: var(--red);
+        }
+
+        .score-orange {
+            color: var(--orange);
+        }
+
+        .score-green {
+            color: var(--green);
+        }
+
+        .score-blue {
+            color: var(--blue);
+        }
+
+        /* Section */
+        .section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .section-icon.dead {
+            background: rgba(255, 68, 68, 0.15);
+        }
+
+        .section-icon.security {
+            background: rgba(255, 140, 0, 0.15);
+        }
+
+        .section-icon.readiness {
+            background: rgba(59, 130, 246, 0.15);
+        }
+
+        .section-icon.design {
+            background: rgba(168, 85, 247, 0.15);
+        }
+
+        .section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            color: var(--gold);
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.88rem;
+        }
+
+        thead th {
+            text-align: left;
+            padding: 0.8rem 1rem;
+            background: var(--surface-2);
+            color: var(--text-dim);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        thead th:first-child {
+            border-radius: 10px 0 0 10px;
+        }
+
+        thead th:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+
+        tbody td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            vertical-align: top;
+        }
+
+        tbody tr:hover {
+            background: rgba(255, 215, 0, 0.03);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-critical {
+            background: rgba(255, 68, 68, 0.15);
+            color: var(--red);
+            border: 1px solid rgba(255, 68, 68, 0.3);
+        }
+
+        .badge-high {
+            background: rgba(255, 140, 0, 0.15);
+            color: var(--orange);
+            border: 1px solid rgba(255, 140, 0, 0.3);
+        }
+
+        .badge-medium {
+            background: rgba(255, 215, 0, 0.15);
+            color: var(--gold);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .badge-low {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--green);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .badge-pass {
+            background: rgba(34, 197, 94, 0.12);
+            color: var(--green);
+        }
+
+        .badge-fail {
+            background: rgba(255, 68, 68, 0.12);
+            color: var(--red);
+        }
+
+        .badge-warn {
+            background: rgba(255, 140, 0, 0.12);
+            color: var(--orange);
+        }
+
+        /* Info Blocks */
+        .info-block {
+            background: var(--surface-2);
+            border-left: 3px solid var(--gold);
+            padding: 1rem 1.2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        .info-block strong {
+            color: var(--text);
+        }
+
+        /* File Tree */
+        .file-tree {
+            background: var(--surface-2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            line-height: 1.9;
+            overflow-x: auto;
+        }
+
+        .file-tree .ok {
+            color: var(--green);
+        }
+
+        .file-tree .dead {
+            color: var(--red);
+        }
+
+        .file-tree .missing {
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        .file-tree .warn {
+            color: var(--orange);
+        }
+
+        /* Priority Matrix */
+        .priority-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.8rem;
+        }
+
+        .priority-item {
+            display: grid;
+            grid-template-columns: 80px 1fr 100px;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--surface-2);
+            border-radius: 12px;
+            font-size: 0.88rem;
+        }
+
+        .priority-item .effort {
+            text-align: right;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        /* Footer */
+        .report-footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        .no-changes-banner {
+            background: linear-gradient(135deg, rgba(255, 68, 68, 0.1), rgba(255, 140, 0, 0.1));
+            border: 1px solid rgba(255, 68, 68, 0.2);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--orange);
+            margin-bottom: 2rem;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.82rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .score-card {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .priority-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .meta-strip {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            table {
+                font-size: 0.78rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="report-header">
+            <h1>🔍 Supen Spa — Website Audit Report</h1>
+            <p class="subtitle">Comprehensive Dead Pages, Security, Readiness & Design Analysis</p>
+            <div class="meta-strip">
+                <div class="meta-item"><span class="dot red"></span> Generated: 8 March 2026, 10:26 PM IST</div>
+                <div class="meta-item"><span class="dot green"></span> Scope: 25 HTML pages, 76+ media assets</div>
+                <div class="meta-item"><span class="dot orange"></span> Status: READ-ONLY — No changes made</div>
+            </div>
+        </div>
+
+        <div class="no-changes-banner">
+            ⚠️ THIS IS A READ-ONLY REPORT — NO CODE CHANGES HAVE BEEN MADE. AWAITING YOUR APPROVAL.
+        </div>
+
+        <!-- Score Cards -->
+        <div class="score-card">
+            <div class="score-item">
+                <div class="score-value score-red">10</div>
+                <div class="score-label">Dead/Broken Pages</div>
+            </div>
+            <div class="score-item">
+                <div class="score-value score-orange">10</div>
+                <div class="score-label">Security Issues</div>
+            </div>
+            <div class="score-item">
+                <div class="score-value score-blue">62%</div>
+                <div class="score-label">Readiness Score</div>
+            </div>
+            <div class="score-item">
+                <div class="score-value score-green">17</div>
+                <div class="score-label">Design Improvements</div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- SECTION 1: DEAD PAGES -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon dead">💀</div>
+                <div>
+                    <h2>1. Dead Pages & Broken Links</h2>
+                    <p style="color: var(--text-dim); font-size: 0.85rem;">Missing pages, duplicate files, and orphaned
+                        assets</p>
+                </div>
+            </div>
+
+            <h3>🔴 Missing Page (404 Error)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Missing Page</th>
+                        <th>Referenced From</th>
+                        <th>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><code>privacy.html</code></td>
+                        <td>Footer of ALL 16+ pages</td>
+                        <td><span class="badge badge-critical">Critical</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔴 9 Dead Root-Level Service Pages (V1 Leftovers)</h3>
+            <div class="info-block">
+                <strong>What's happening:</strong> These 9 root-level files are obsolete V1 versions with emoji-based
+                navigation (👑), no premium CSS, and no glassmorphism design. The actual pages are in
+                <code>nested-pages/</code> which use the V2 redesign. These dead pages confuse search engine indexing
+                and users.
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dead Root Page</th>
+                        <th>Active Replacement</th>
+                        <th>Root Style</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>aromatherapy.html</code></td>
+                        <td><code>nested-pages/aromatherapy.html</code></td>
+                        <td>V1 — has styles.css but old layout</td>
+                        <td><span class="badge badge-critical">Delete</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>balinese.html</code></td>
+                        <td><code>nested-pages/balinese.html</code></td>
+                        <td>V1 — emoji nav, no CSS files</td>
+                        <td><span class="badge badge-critical">Delete</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>body-scrub.html</code></td>
+                        <td><code>nested-pages/body-scrub.html</code></td>
+                        <td>V1 — emoji nav, no CSS files</td>
+                        <td><span class="badge badge-critical">Delete</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>couples.html</code></td>
+                        <td><code>nested-pages/couples.html</code></td>
+                        <td>V1 — emoji nav, no CSS files</td>
+                        <td><span class="badge badge-critical">Delete</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>deep-tissue.html</code></td>
+                        <td><code>nested-pages/deep-tissue.html</code></td>
+                        <td>V1 — emoji nav, no CSS files</td>
+                        <td><span class="badge badge-critical">Delete</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>hot-stone.html</code></td>
+                        <td><code>nested-pages/hot-stone.html</code></td>
+                        <td>V1 — emoji nav, no CSS files</td>
+                        <td><span class="badge badge-critical">Delete</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>signature.html</code></td>
+                        <td><code>nested-pages/signature.html</code></td>
+                        <td>V1 — emoji nav, no CSS files</td>
+                        <td><span class="badge badge-critical">Delete</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>swedish.html</code></td>
+                        <td><code>nested-pages/swedish.html</code></td>
+                        <td>V1 — emoji nav, no CSS files</td>
+                        <td><span class="badge badge-critical">Delete</span></td>
+                    </tr>
+                    <tr>
+                        <td><code>thai-massage.html</code></td>
+                        <td><code>nested-pages/thai-massage.html</code></td>
+                        <td>V1 — emoji nav, no CSS files</td>
+                        <td><span class="badge badge-critical">Delete</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>📦 48 Unused Image Assets</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Count</th>
+                        <th>Examples</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>WhatsApp screenshots</td>
+                        <td>15</td>
+                        <td>WA-1 through WA-16</td>
+                    </tr>
+                    <tr>
+                        <td>Banner images</td>
+                        <td>5</td>
+                        <td>Banner/Msg1–Msg5</td>
+                    </tr>
+                    <tr>
+                        <td>Marketing promos</td>
+                        <td>6</td>
+                        <td>Poster-1/2, Promo-1x1-*, Spa-Poster*</td>
+                    </tr>
+                    <tr>
+                        <td>Alt massage images</td>
+                        <td>8</td>
+                        <td>Message-Aroma with Scrub, Ayurvedic Potli, etc.</td>
+                    </tr>
+                    <tr>
+                        <td>Misc/Legacy</td>
+                        <td>14</td>
+                        <td>BG Spa-*, JD-*, Under Construction, etc.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- SECTION 2: SECURITY -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon security">🛡️</div>
+                <div>
+                    <h2>2. Security Audit</h2>
+                    <p style="color: var(--text-dim); font-size: 0.85rem;">XSS vectors, CSP, external dependencies, and
+                        clickjacking</p>
+                </div>
+            </div>
+
+            <h3>🔴 High Severity</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Issue</th>
+                        <th>Severity</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>No Content Security Policy</td>
+                        <td><span class="badge badge-critical">High</span></td>
+                        <td>No CSP meta tag on any page. XSS via injected scripts is possible.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>CDN resources without SRI</td>
+                        <td><span class="badge badge-critical">High</span></td>
+                        <td>Font Awesome & Google Fonts loaded without <code>integrity</code> or
+                            <code>crossorigin</code>. CDN compromise = malicious code execution.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>innerHTML with dynamic content</td>
+                        <td><span class="badge badge-critical">High</span></td>
+                        <td><code>gallery.html</code> uses <code>innerHTML</code> with <code>src</code> from onclick —
+                            XSS vector if DOM injection occurs.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🟡 Medium Severity</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Issue</th>
+                        <th>Severity</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4</td>
+                        <td><code>target="_blank"</code> without <code>rel="noopener"</code></td>
+                        <td><span class="badge badge-high">Medium</span></td>
+                        <td>27+ instances. Opened page can access <code>window.opener</code>.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Inline onclick handlers (22+)</td>
+                        <td><span class="badge badge-high">Medium</span></td>
+                        <td>Prevents strict CSP enforcement. Use <code>addEventListener</code> instead.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>No X-Frame-Options</td>
+                        <td><span class="badge badge-high">Medium</span></td>
+                        <td>Site can be iframed — clickjacking risk.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>External JS without integrity</td>
+                        <td><span class="badge badge-high">Medium</span></td>
+                        <td>Root <code>aromatherapy.html</code> loads Font Awesome JS CDN without SRI.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🟢 Low Severity</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Issue</th>
+                        <th>Severity</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>8</td>
+                        <td>No HTTPS enforcement meta</td>
+                        <td><span class="badge badge-low">Low</span></td>
+                        <td>Missing <code>upgrade-insecure-requests</code> directive.</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>No robots.txt or sitemap.xml</td>
+                        <td><span class="badge badge-low">Low</span></td>
+                        <td>Dead pages may get indexed by search engines.</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Form sends to WhatsApp only</td>
+                        <td><span class="badge badge-low">Info</span></td>
+                        <td>No server-side validation — acceptable for WhatsApp model.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- SECTION 3: READINESS -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon readiness">🚀</div>
+                <div>
+                    <h2>3. Production Readiness Report</h2>
+                    <p style="color: var(--text-dim); font-size: 0.85rem;">Overall score: <strong
+                            style="color: var(--orange);">62/100</strong></p>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Criterion</th>
+                        <th>Status</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>All pages load without 404</td>
+                        <td><span class="badge badge-fail">FAIL</span></td>
+                        <td><code>privacy.html</code> missing</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>All nav links functional</td>
+                        <td><span class="badge badge-warn">WARN</span></td>
+                        <td>Footer privacy link broken; duplicate pages confuse routing</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Mobile responsive</td>
+                        <td><span class="badge badge-pass">PASS</span></td>
+                        <td><code>responsive.css</code> covers 320px–1440px+</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Cross-browser compatible</td>
+                        <td><span class="badge badge-pass">PASS</span></td>
+                        <td>Standard CSS with -webkit- prefixes</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Image optimization</td>
+                        <td><span class="badge badge-warn">WARN</span></td>
+                        <td>77 images lack <code>loading="lazy"</code>; videos are 6–84MB</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>SEO meta tags</td>
+                        <td><span class="badge badge-pass">PASS</span></td>
+                        <td>All pages have description and title</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Favicon present</td>
+                        <td><span class="badge badge-pass">PASS</span></td>
+                        <td>Supen-Spa-Logo.png used</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Consistent navigation</td>
+                        <td><span class="badge badge-fail">FAIL</span></td>
+                        <td>9 root pages have V1 emoji nav</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Consistent footer</td>
+                        <td><span class="badge badge-fail">FAIL</span></td>
+                        <td>Root service pages have basic footer</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>HTTPS ready</td>
+                        <td><span class="badge badge-pass">PASS</span></td>
+                        <td>No mixed content issues</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Performance budget</td>
+                        <td><span class="badge badge-warn">WARN</span></td>
+                        <td><code>styles.css</code> is 88KB (target &lt;50KB)</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>JavaScript errors</td>
+                        <td><span class="badge badge-pass">PASS</span></td>
+                        <td>Proper null checks and error handling</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Accessibility</td>
+                        <td><span class="badge badge-warn">WARN</span></td>
+                        <td>Missing alt text on some images</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Privacy/Legal</td>
+                        <td><span class="badge badge-fail">FAIL</span></td>
+                        <td>No Privacy Policy page</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Git repo clean</td>
+                        <td><span class="badge badge-warn">WARN</span></td>
+                        <td>Large video files trigger GitHub warnings</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- SECTION 4: DESIGN -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon design">🎨</div>
+                <div>
+                    <h2>4. Design Improvement Report</h2>
+                    <p style="color: var(--text-dim); font-size: 0.85rem;">17 actionable improvements for a premium
+                        experience</p>
+                </div>
+            </div>
+
+            <h3>🔴 Critical Design Issues</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Issue</th>
+                        <th>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>9 root-level service pages use V1 design (emoji nav, no glassmorphism)</td>
+                        <td><span class="badge badge-critical">Severe brand inconsistency</span></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>294 inline hardcoded colors across HTML files</td>
+                        <td><span class="badge badge-critical">Theme changes impossible</span></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>11 pages contain inline <code>&lt;style&gt;</code> blocks</td>
+                        <td><span class="badge badge-high">Not cacheable</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🟡 Important Improvements</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Improvement</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4</td>
+                        <td>Missing <code>loading="lazy"</code> on 77 images</td>
+                        <td>Slows initial page load, especially on mobile</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Gallery CSS is all inline (~200 lines)</td>
+                        <td>Should be in <code>styles.css</code> for caching</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Index hero carousel styles inline (~120 lines)</td>
+                        <td>Should be in <code>styles.css</code></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>48 unused images (~30MB+)</td>
+                        <td>Bloats repo size and deployment time</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Video files 6–84MB each</td>
+                        <td>Should compress or host externally</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><code>styles.css</code> is 88KB with duplicate rules</td>
+                        <td>Target under 50KB</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🟢 Nice-to-Have Enhancements</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Enhancement</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10</td>
+                        <td>Add <code>sitemap.xml</code></td>
+                        <td>Improves SEO crawlability</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Add <code>robots.txt</code></td>
+                        <td>Block dead pages from indexing</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Add Open Graph meta tags</td>
+                        <td>Better WhatsApp/Instagram link previews</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Add JSON-LD structured data</td>
+                        <td>LocalBusiness + Spa schema for Google</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Multi-size favicon set</td>
+                        <td>16px, 32px, 180px apple-touch-icon</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Minify CSS/JS</td>
+                        <td>Reduce 109KB payload to ~40KB</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Universal scroll animations</td>
+                        <td>Only some pages use <code>.scroll-reveal</code></td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Add breadcrumb navigation</td>
+                        <td>Helps user orientation on detail pages</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- SECTION 5: FILE STRUCTURE -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon dead">📁</div>
+                <div>
+                    <h2>5. File Structure Overview</h2>
+                    <p style="color: var(--text-dim); font-size: 0.85rem;">Current state with recommended actions</p>
+                </div>
+            </div>
+
+            <div class="file-tree">
+                <span class="ok">website-pages/</span><br>
+                ├── <span class="ok">index.html</span> &nbsp;&nbsp; ✅ Keep (V2 premium)<br>
+                ├── <span class="ok">about.html</span> &nbsp;&nbsp; ✅ Keep<br>
+                ├── <span class="ok">services.html</span> &nbsp;&nbsp; ✅ Keep<br>
+                ├── <span class="ok">gallery.html</span> &nbsp;&nbsp; ✅ Keep<br>
+                ├── <span class="ok">pricing.html</span> &nbsp;&nbsp; ✅ Keep<br>
+                ├── <span class="ok">contact.html</span> &nbsp;&nbsp; ✅ Keep<br>
+                ├── <span class="ok">book-now.html</span> &nbsp;&nbsp; ✅ Keep<br>
+                ├── <span class="missing">privacy.html</span> &nbsp;&nbsp; ❌ MISSING — Must create<br>
+                ├── <span class="dead">aromatherapy.html</span> &nbsp;&nbsp; 🔴 DELETE (dead V1)<br>
+                ├── <span class="dead">balinese.html</span> &nbsp;&nbsp; 🔴 DELETE<br>
+                ├── <span class="dead">body-scrub.html</span> &nbsp;&nbsp; 🔴 DELETE<br>
+                ├── <span class="dead">couples.html</span> &nbsp;&nbsp; 🔴 DELETE<br>
+                ├── <span class="dead">deep-tissue.html</span> &nbsp;&nbsp; 🔴 DELETE<br>
+                ├── <span class="dead">hot-stone.html</span> &nbsp;&nbsp; 🔴 DELETE<br>
+                ├── <span class="dead">signature.html</span> &nbsp;&nbsp; 🔴 DELETE<br>
+                ├── <span class="dead">swedish.html</span> &nbsp;&nbsp; 🔴 DELETE<br>
+                ├── <span class="dead">thai-massage.html</span> &nbsp;&nbsp; 🔴 DELETE<br>
+                ├── <span class="ok">nested-pages/</span> &nbsp;&nbsp; ✅ Keep all 9 (V2 premium)<br>
+                │ &nbsp;&nbsp; ├── aromatherapy.html<br>
+                │ &nbsp;&nbsp; ├── balinese.html<br>
+                │ &nbsp;&nbsp; ├── body-scrub.html<br>
+                │ &nbsp;&nbsp; ├── couples.html<br>
+                │ &nbsp;&nbsp; ├── deep-tissue.html<br>
+                │ &nbsp;&nbsp; ├── hot-stone.html<br>
+                │ &nbsp;&nbsp; ├── signature.html<br>
+                │ &nbsp;&nbsp; ├── swedish.html<br>
+                │ &nbsp;&nbsp; └── thai-massage.html<br>
+                └── <span class="ok">assets/</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;├── css/ &nbsp; <span class="warn">(styles.css 88KB — needs cleanup)</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;├── js/ &nbsp; ✅ OK<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;└── images/ &nbsp; <span class="warn">(48 unused files — archive/delete)</span>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- PRIORITY MATRIX -->
+        <!-- ═══════════════════════════════════════ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon readiness">⚡</div>
+                <div>
+                    <h2>6. Priority Action Matrix</h2>
+                    <p style="color: var(--text-dim); font-size: 0.85rem;">Ordered by severity — estimated effort
+                        included</p>
+                </div>
+            </div>
+
+            <div class="priority-grid">
+                <div class="priority-item"><span class="badge badge-critical">P0</span> Create <code>privacy.html</code>
+                    page <span class="effort">~30 min</span></div>
+                <div class="priority-item"><span class="badge badge-critical">P0</span> Delete 9 dead root-level service
+                    pages <span class="effort">~5 min</span></div>
+                <div class="priority-item"><span class="badge badge-critical">P0</span> Add
+                    <code>rel="noopener noreferrer"</code> to all <code>target="_blank"</code> <span class="effort">~15
+                        min</span></div>
+                <div class="priority-item"><span class="badge badge-high">P1</span> Add SRI integrity attributes to CDN
+                    resources <span class="effort">~20 min</span></div>
+                <div class="priority-item"><span class="badge badge-high">P1</span> Add <code>loading="lazy"</code> to
+                    all non-critical images <span class="effort">~15 min</span></div>
+                <div class="priority-item"><span class="badge badge-high">P1</span> Move inline
+                    <code>&lt;style&gt;</code> blocks into <code>styles.css</code> <span class="effort">~45 min</span>
+                </div>
+                <div class="priority-item"><span class="badge badge-high">P1</span> Add Content Security Policy meta tag
+                    <span class="effort">~15 min</span></div>
+                <div class="priority-item"><span class="badge badge-medium">P2</span> Remove/archive 48 unused images
+                    <span class="effort">~10 min</span></div>
+                <div class="priority-item"><span class="badge badge-medium">P2</span> Compress video files or use
+                    external CDN <span class="effort">~30 min</span></div>
+                <div class="priority-item"><span class="badge badge-medium">P2</span> Replace 294 hardcoded inline
+                    colors with CSS vars <span class="effort">~2 hrs</span></div>
+                <div class="priority-item"><span class="badge badge-low">P3</span> Add <code>sitemap.xml</code> and
+                    <code>robots.txt</code> <span class="effort">~15 min</span></div>
+                <div class="priority-item"><span class="badge badge-low">P3</span> Add Open Graph and JSON-LD structured
+                    data <span class="effort">~1 hr</span></div>
+                <div class="priority-item"><span class="badge badge-low">P3</span> Minify CSS/JS for production <span
+                        class="effort">~10 min</span></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="report-footer">
+            <p>⚠️ NO CHANGES HAVE BEEN MADE — Awaiting your approval before implementing any fixes.</p>
+            <p style="margin-top: 0.5rem;">Report generated by Antigravity AI · 8 March 2026</p>
+        </div>
+    </div>
+</body>
+
+</html>

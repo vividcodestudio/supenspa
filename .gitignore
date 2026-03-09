@@ -22,7 +22,7 @@ temp/
 .vscode/
 
 # Project Specific
-website-pages/assets/css/*.map
+website/assets/css/*.map
 
 # Large Media Files (exceed GitHub 100MB limit)
 *.mp4
@@ -36,10 +36,10 @@ website-pages/assets/css/*.map
 *.7z
 
 # Legacy asset folder with heavy originals
-website-pages/assets/Supen-Spa\ Assets/
-website-pages/assets/images/Supen-Spa.zip
-website-pages/assets/images/Supen\ Video-*.mp4
-website-pages/assets/images/Thai-Spa-Message-Video.mp4
+website/assets/Supen-Spa\ Assets/
+website/assets/images/Supen-Spa.zip
+website/assets/images/Supen\ Video-*.mp4
+website/assets/images/Thai-Spa-Message-Video.mp4
 
 # Clean Root Enforcement - Proactively ignore misplaced files in root
 # (Forces developers to move them to Config/)

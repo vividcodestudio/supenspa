@@ -1,0 +1,782 @@
+/* ====================================
+   SUPEN SPA - RESPONSIVE STYLES
+   Mobile-First Approach
+   ==================================== */
+
+/* ====================================
+   EXTRA SMALL DEVICES (≤480px)
+   ==================================== */
+
+@media (max-width: 480px) {
+
+    /* ── Navbar ── */
+    .navbar {
+        padding-top: env(safe-area-inset-top, 0px);
+        /* notch support */
+    }
+
+    .nav-container {
+        padding: 0.5rem 1rem;
+    }
+
+    .logo-img {
+        height: 52px;
+    }
+
+    /* ── Hamburger ── */
+    .hamburger {
+        z-index: 1101;
+    }
+
+
+    /* ── Hero Section ── */
+    .hero {
+        height: 100dvh;
+        /* dynamic viewport — accounts for browser chrome */
+        min-height: 580px;
+        margin-top: -120px;
+    }
+
+    /* Hero content: push down enough to clear the navbar (logo 52px + padding ~12px = ~64px) */
+    .hero-content {
+        padding: calc(64px + 12rem) 1.2rem 3rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hero-title {
+        font-size: clamp(1.6rem, 7vw, 2.2rem);
+        margin: 0.5rem 0 0.8rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.6;
+    }
+
+    .hero-badge {
+        font-size: 0.72rem;
+        padding: 0.35rem 0.9rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 2rem;
+    }
+
+    /* Hero stats — keep 3-across but compact */
+    .hero-stats {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: nowrap;
+    }
+
+    .stat-item {
+        flex: 1;
+    }
+
+    .stat-number {
+        font-size: 1.3rem;
+    }
+
+    .stat-label {
+        font-size: 0.65rem;
+    }
+
+    /* Hero buttons — stack vertically, full width */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.7rem;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* ── Typography ── */
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    /* ── Layout ── */
+    .container {
+        padding: 0 1rem;
+    }
+
+    section {
+        padding: 2.5rem 0;
+    }
+
+    .gold-divider {
+        width: 60px;
+    }
+
+    /* ── Grids ── */
+    .treatments-grid,
+    .features-grid,
+    .why-grid,
+    .testimonials-carousel,
+    .gallery-grid,
+    .blog-grid,
+    .pricing-grid,
+    .about-grid,
+    .contact-grid,
+    .details-grid,
+    .booking-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .therapies-gallery-grid {
+        gap: 0.5rem;
+    }
+
+    .therapies-gallery-grid .gallery-item {
+        height: auto !important;
+    }
+
+    .about-image {
+        height: 320px;
+        /* Smaller height for small mobile screens */
+    }
+
+    .treatment-card,
+    .feature-box,
+    .pricing-card,
+    .blog-card,
+    .gallery-item {
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    /* ── Forms ── */
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* ── Footer ── */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .social-icons,
+    .social-links {
+        justify-content: center;
+    }
+
+    /* ── Page Hero (sub-pages) ── */
+    .page-hero {
+        margin-top: -80px;
+        height: 550px;
+    }
+
+    .page-hero-content {
+        padding-top: 220px;
+    }
+
+    .page-hero-title {
+        font-size: 1.4rem;
+    }
+}
+
+/* ====================================
+   SMALL DEVICES (481px – 768px)
+   ==================================== */
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+    /* ── Navbar ── */
+    .nav-container {
+        padding: 0.6rem 1.5rem;
+    }
+
+    .logo-img {
+        height: 62px;
+    }
+
+    /* ── Hamburger ── */
+    .hamburger {
+        z-index: 1101;
+    }
+
+
+    /* ── Hero Section ── */
+    .hero {
+        height: 100dvh;
+        min-height: 580px;
+        margin-top: -120px;
+    }
+
+    /* Hero content: logo 62px + padding ~12px = ~74px */
+    .hero-content {
+        padding: calc(74px + 5.5rem) 2rem 3rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 6vw, 2.8rem);
+        margin: 0.8rem 0;
+    }
+
+    .hero-description {
+        font-size: 1.05rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* ── Typography ── */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    /* ── Layout ── */
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    section {
+        padding: 2.5rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* ── Grids ── */
+    .treatments-grid,
+    .features-grid,
+    .why-grid,
+    .gallery-grid,
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid,
+    .details-grid,
+    .contact-grid,
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ── Page Hero ── */
+    .page-hero {
+        margin-top: -80px;
+        height: 580px;
+    }
+
+    .page-hero-content {
+        padding-top: 240px;
+    }
+
+    .page-hero-title {
+        font-size: 2rem;
+    }
+
+    /* ── Process / Form ── */
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ====================================
+   MEDIUM DEVICES (769px - 1024px)
+   ==================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* Navigation */
+    .nav-container {
+        padding: 1rem 2rem;
+    }
+
+    .nav-menu {
+        gap: 1.5rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Container */
+    .container {
+        padding: 0 2rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 80vh;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    /* Sections */
+    section {
+        padding: 3rem 0;
+    }
+
+    /* Grid Layouts */
+    .treatments-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonials-carousel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .details-grid {
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    .booking-container {
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    /* Featured Article */
+    .featured-article {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Page Hero */
+    .page-hero {
+        margin-top: -80px;
+        height: 550px;
+    }
+
+    .page-hero-title {
+        font-size: 2.5rem;
+    }
+
+    /* Pricing Card */
+    .pricing-card.highlighted {
+        transform: scale(1.05);
+    }
+
+    /* Process Steps */
+    .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Related services */
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Testimonials Extended */
+    .testimonials-extended-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Social Links */
+    .social-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ====================================
+   LARGE DEVICES (1025px and above)
+   ==================================== */
+
+@media (min-width: 1025px) {
+
+    /* Navigation */
+    .nav-container {
+        padding: 1rem 2rem;
+    }
+
+    .nav-menu {
+        gap: 2rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    /* Container */
+    .container {
+        padding: 0 2rem;
+    }
+
+    /* Sections */
+    section {
+        padding: 5rem 0;
+    }
+
+    /* Grid Layouts */
+    .treatments-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonials-carousel {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .details-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .booking-container {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    /* Featured Article */
+    .featured-article {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Related services */
+    .related-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Testimonials Extended */
+    .testimonials-extended-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Process Steps */
+    .process-steps {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Booking Card */
+    .booking-card {
+        position: sticky;
+        top: 100px;
+    }
+
+    /* Page Hero */
+    .page-hero {
+        margin-top: -80px;
+        height: 600px;
+    }
+
+    /* Pricing Card */
+    .pricing-card.highlighted {
+        transform: scale(1.05);
+    }
+}
+
+/* ====================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ==================================== */
+
+@media (hover: none) and (pointer: coarse) {
+
+    /* Buttons */
+    .btn,
+    .nav-link,
+    .glass-card,
+    .filter-btn {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        min-height: 44px;
+    }
+
+    /* Tap feedback */
+    .btn:active,
+    .nav-link:active,
+    .filter-btn:active {
+        opacity: 0.8;
+    }
+
+    /* Remove hover effects on touch */
+    .btn:hover::after,
+    .nav-link:hover::after {
+        width: auto;
+    }
+}
+
+/* ====================================
+   HIGH RESOLUTION DISPLAYS
+   ==================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+    /* Optimize for retina displays */
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Sharper borders */
+    .glass-card,
+    .btn,
+    .filter-btn {
+        border-width: 1px;
+    }
+}
+
+/* ====================================
+   PORTRAIT / LANDSCAPE ADJUSTMENTS
+   ==================================== */
+
+/* Portrait phones — hero takes more height */
+@media (orientation: portrait) and (max-width: 768px) {
+    .hero {
+        height: 100dvh;
+        min-height: 580px;
+    }
+
+    .page-hero {
+        margin-top: -80px;
+        height: 480px;
+    }
+}
+
+/* Landscape on short phones (e.g. iPhone SE landscape) */
+@media (orientation: landscape) and (max-height: 500px) {
+    .hero {
+        height: 100dvh;
+        min-height: 420px;
+        margin-top: -120px;
+    }
+
+    .hero-content {
+        padding: calc(56px + 1rem) 1.5rem 1rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.4rem, 5vw, 2rem);
+        margin: 0.3rem 0;
+    }
+
+    .hero-stats {
+        margin-bottom: 0.8rem;
+    }
+
+    .page-hero {
+        margin-top: -80px;
+        height: 300px;
+    }
+
+    section {
+        padding: 2rem 0;
+    }
+}
+
+/* ====================================
+   PRINT STYLES
+   ==================================== */
+
+@media print {
+
+    .navbar,
+    .hamburger,
+    .btn,
+    .cta-banner,
+    .newsletter {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: black;
+        page-break-after: avoid;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+/* ====================================
+   PREFERED MOTION SETTINGS
+   ==================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    /* Already dark by default, but can add dark mode enhancements */
+    body {
+        background-color: #0E0620;
+    }
+}
+
+/* ====================================
+   LANDSCAPE MODE - MOBILE
+   ==================================== */
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        height: 85vh;
+        margin-top: 50px;
+    }
+
+    .page-hero {
+        margin-top: -80px;
+        height: 350px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    section {
+        padding: 2rem 0;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+}

@@ -8,7 +8,7 @@ All 15 HTML pages are complete and ready. No coding. No waiting. Deploy in minut
 
 ## 📦 What You Have (Ready to Deploy)
 
-Located in `website-pages/` folder:
+Located in `website/` folder:
 
 ```
 ✅ 01-home.html                 (Homepage)
@@ -46,7 +46,7 @@ Go to **github.com** → Sign up (free)
 
 ### Step 3: Upload Your Files
 - Click **Add files** → **Upload files**
-- Select all files from `/website-pages/` folder
+- Select all files from `/website/` folder
 - Click **Commit changes**
 
 ### Step 4: Deploy to Netlify
@@ -75,7 +75,7 @@ Go to **github.com** → Sign up (free)
 
 ### Step 2: Upload All HTML Files
 - Click **Add files** → **Upload files**
-- Select all 15 HTML files from `/website-pages/`
+- Select all 15 HTML files from `/website/`
 - Commit changes
 
 ### Step 3: Site is Live!
@@ -99,10 +99,10 @@ Go to **github.com** → Sign up (free)
 
 ### If you don't have time for setup:
 
-1. **Your files are already in:** `website-pages/`
+1. **Your files are already in:** `website/`
 2. **Just:**
    - Go to netlify.com
-   - Drag-and-drop the `website-pages/` folder
+   - Drag-and-drop the `website/` folder
    - Site is live in 30 seconds
 
 ---
@@ -125,7 +125,7 @@ Go to **github.com** → Sign up (free)
 
 Before deploying, verify:
 
-- [ ] All 15 HTML files in `/website-pages/` folder
+- [ ] All 15 HTML files in `/website/` folder
 - [ ] Opened one page locally - loads without errors
 - [ ] WhatsApp number is correct:  `+91 98198 93901`
 - [ ] All internal links work (click a few navigation links)
@@ -135,8 +135,8 @@ Before deploying, verify:
 # To test locally before deploying:
 # From SupenSpa folder:
 python3 -m http.server 8000
-# Then visit: http://localhost:8000/01-home.html (if serving website-pages/)
-# Or: http://localhost:8000/website-pages/01-home.html (if serving from root)
+# Then visit: http://localhost:8000/01-home.html (if serving website/)
+# Or: http://localhost:8000/website/01-home.html (if serving from root)
 ```
 
 ---
@@ -213,7 +213,7 @@ python3 -m http.server 8000
 
 ```
 /SupenSpa/
-└── website-pages/
+└── website/
     ├── 01-home.html
     ├── 02-about.html
     ├── 03-services.html
@@ -239,7 +239,7 @@ python3 -m http.server 8000
 
 **5 Minutes - Netlify Drag & Drop:**
 1. Go to netlify.com
-2. Drag `website-pages/` folder to browser
+2. Drag `website/` folder to browser
 3. Wait 30 seconds
 4. Site is live! 🎉
 
@@ -294,7 +294,7 @@ No more waiting. No more delays.
 **Website Status:** ✅ READY TO DEPLOY  
 **Estimated Launch Time:** 5 minutes (Netlify) to 2 hours (full setup)
 
-**Any questions? All pages are in `/website-pages/`**
+**Any questions? All pages are in `/website/`**
 
 Start with Option 1 (Netlify) - it's the easiest!
 

@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://wa.me https://maps.google.com https://maps.gstatic.com *.googleapis.com *.gstatic.com; frame-src https://www.google.com; connect-src 'self';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Book your royal wellness ritual at Supen Spa Bandra. Instant WhatsApp scheduling for our most exclusive relaxation therapies and private sanctuary sessions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://supenspa.com/book-now.html">
+    <meta property="og:title" content="Book Now – Supen Spa | Royal Wellness Sanctuary Bandra Mumbai">
+    <meta property="og:description"
+        content="Reserve your private royal wellness session at Supen Spa. Instant WhatsApp booking, no advance payment.">
+    <meta property="og:image" content="https://supenspa.com/assets/images/Supen-Spa-Logo.png">
+    <title>Book Now – Secure Your Private Wellness Ritual | Supen Spa Mumbai</title>
+    <link crossorigin="anonymous"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="icon" type="image/png" href="assets/images/Supen-Spa-Logo.png">
+    <meta name="theme-color" content="#0E0620">
+
+    <style>
+        /* ── Book Now Page Exclusive Styles ── */
+        .book-hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .book-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('assets/images/BG Spa-2.jpg');
+            background-size: cover;
+            background-position: center;
+            transform: scale(1.05);
+            animation: heroZoom 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroZoom {
+            from {
+                transform: scale(1.05);
+            }
+
+            to {
+                transform: scale(1.12);
+            }
+        }
+
+        .book-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(14, 6, 32, 0.55) 0%,
+                    rgba(14, 6, 32, 0.78) 60%,
+                    rgba(14, 6, 32, 0.98) 100%);
+        }
+
+        .book-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 100px 2rem 3rem;
+            max-width: 780px;
+            width: 100%;
+        }
+
+        .book-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255, 215, 0, 0.12);
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            color: var(--color-gold);
+            padding: 0.5rem 1.4rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .book-hero-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #FFD700, #fff 50%, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% auto;
+            animation: shimmer 4s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .book-hero-sub {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .trust-pills {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .trust-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.85);
+            padding: 0.45rem 1rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .trust-pill i {
+            color: var(--color-gold);
+            font-size: 0.75rem;
+        }
+
+        /* ── Quick WhatsApp Book Banner ── */
+        .whatsapp-cta-bar {
+            background: linear-gradient(135deg, #0F5C2E, #25D366 50%, #128C7E);
+            padding: 1.2rem 2rem;
+            text-align: center;
+        }
+
+        .whatsapp-cta-bar a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .whatsapp-cta-bar a:hover {
+            opacity: 0.88;
+            text-shadow: none;
+        }
+
+        .whatsapp-cta-bar .wa-number {
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+
+        /* ── Step Indicator ── */
+        .steps-row {
+            display: flex;
+            gap: 0;
+            justify-content: center;
+            background: rgba(26, 11, 46, 0.8);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.12);
+        }
+
+        .step-btn {
+            flex: 1;
+            max-width: 260px;
+            padding: 1.4rem 1rem;
+            text-align: center;
+            border-right: 1px solid rgba(255, 215, 0, 0.1);
+            cursor: default;
+            transition: background 0.3s;
+        }
+
+        .step-btn:last-child {
+            border-right: none;
+        }
+
+        .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 215, 0, 0.12);
+            border: 1.5px solid rgba(255, 215, 0, 0.35);
+            color: var(--color-gold);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin: 0 auto 0.5rem;
+        }
+
+        .step-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.55);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ── Service Selection Grid ── */
+        .service-grid-section {
+            padding: 5rem 0 3rem;
+        }
+
+        .service-pick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.6rem;
+            margin-top: 2.5rem;
+        }
+
+        .service-pick-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
+            background: rgba(26, 11, 46, 0.5);
+            transition: transform 0.35s ease, border-color 0.3s, box-shadow 0.35s;
+            outline: none;
+        }
+
+        .service-pick-card:hover,
+        .service-pick-card:focus-within {
+            transform: translateY(-8px);
+            border-color: rgba(255, 215, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.1);
+        }
+
+        .service-pick-card.signature-card {
+            border-color: rgba(255, 215, 0, 0.4);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.08);
+        }
+
+        .service-pick-card .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .service-pick-card:hover .card-img {
+            transform: scale(1.06);
+        }
+
+        .card-body {
+            padding: 1.4rem 1.5rem 1.6rem;
+        }
+
+        .card-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--color-gold);
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            background: none;
+            -webkit-text-fill-color: #fff;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.6;
+            margin-bottom: 1.1rem;
+        }
+
+        .card-footer-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .card-price {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--color-gold);
+        }
+
+        .card-book-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #FFD700, #FFE55C);
+            color: #0E0620;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 800;
+            padding: 0.55rem 1.2rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            transition: all 0.25s;
+            white-space: nowrap;
+        }
+
+        .card-book-btn:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            color: #0E0620;
+        }
+
+        /* ── Quick Booking Form Panel ── */
+        .booking-panel-section {
+            padding: 4rem 0;
+            background: radial-gradient(ellipse at center top, rgba(26, 11, 46, 0.7) 0%, transparent 70%),
+                rgba(14, 6, 32, 0.95);
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .booking-panel-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .panel-left-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+            background: linear-gradient(90deg, #FFD700, #fff 60%, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .panel-subtitle {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .bk-label {
+            display: block;
+            color: var(--color-gold);
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .bk-input,
+        .bk-select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1.5px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 0.9rem 1.1rem;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.92rem;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            outline: none;
+            margin-bottom: 1.2rem;
+        }
+
+        .bk-input:focus,
+        .bk-select:focus {
+            border-color: var(--color-gold);
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+        }
+
+        .bk-select option {
+            background: #1a0b2e;
+            color: #fff;
+        }
+
+        .bk-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .bk-submit {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: #25D366;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 0.65rem 1rem;
+            border-radius: 10px;
+            border: 1.5px solid #25D366;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .bk-submit:hover {
+            background: rgba(37, 211, 102, 0.08);
+            transform: translateY(-2px);
+            box-shadow: none;
+        }
+
+        .no-payment-note {
+            text-align: center;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.35);
+            margin-top: 0.75rem;
+        }
+
+        /* ── Guarantee Panel ── */
+        .guarantee-panel {
+            background: rgba(26, 11, 46, 0.65);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 24px;
+            padding: 2.5rem;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .guarantee-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            margin-bottom: 1.8rem;
+            background: none;
+            -webkit-text-fill-color: var(--color-gold);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .guarantee-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.08);
+        }
+
+        .guarantee-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .g-icon {
+            width: 42px;
+            height: 42px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: rgba(255, 215, 0, 0.08);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--color-gold);
+        }
+
+        .g-text strong {
+            display: block;
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .g-text p {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 0.83rem;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        .g-whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: #25D366;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 0.65rem 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            border: 1.5px solid #25D366;
+            transition: all 0.25s;
+        }
+
+        .g-whatsapp-btn:hover {
+            background: rgba(37, 211, 102, 0.08);
+            transform: translateY(-2px);
+            box-shadow: none;
+            color: #25D366;
+            text-shadow: none;
+        }
+
+        /* ── Operating Hours Banner ── */
+        .hours-strip {
+            background: linear-gradient(90deg, rgba(14, 6, 32, 0.95), rgba(26, 11, 46, 0.95));
+            border-top: 1px solid rgba(255, 215, 0, 0.15);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+            padding: 2rem;
+        }
+
+        .hours-grid {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .hours-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .hours-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--color-gold);
+            flex-shrink: 0;
+        }
+
+        .hours-text strong {
+            display: block;
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .hours-text span {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 0.82rem;
+        }
+
+        .hours-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255, 215, 0, 0.15);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .booking-panel-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .steps-row {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .book-hero {
+                height: 80vh;
+                min-height: 480px;
+            }
+
+            .service-pick-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-pills {
+                gap: 0.5rem;
+            }
+
+            .hours-grid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hours-divider {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/images/Supen-Spa-Logo.png" alt="Supen Spa – Royal Luxury Wellness Sanctuary"
+                        class="logo-img">
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <div class="nav-item-dropdown">
+                    <a href="services.html" class="nav-link">Rituals <i class="fas fa-chevron-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container">
+                            <div class="mega-menu-column">
+                                <h4>Signature & Popular</h4>
+                                <a href="services/signature.html" class="mega-menu-item">
+                                    <img src="assets/images/Posters/Message-1.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Signature Ritual</span>
+                                        <span class="mega-menu-desc">Royal 120m experience</span>
+                                    </div>
+                                </a>
+                                <a href="services/swedish.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Swedish.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Swedish Massage</span>
+                                        <span class="mega-menu-desc">Classic relaxation</span>
+                                    </div>
+                                </a>
+                                <a href="services/deep-tissue.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Deep Tissue.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Deep Tissue Massage</span>
+                                        <span class="mega-menu-desc">Muscle restoration</span>
+                                    </div>
+                                </a>
+                                <a href="services/aromatherapy.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Aroma.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Aroma Massage</span>
+                                        <span class="mega-menu-desc">Essential oil healing</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Ayurvedic & Rejuv</h4>
+                                <a href="services/ayurvedic-potli.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Ayurvedic Potli.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Ayurvedic Potli Massage</span>
+                                        <span class="mega-menu-desc">Herbal compress</span>
+                                    </div>
+                                </a>
+                                <a href="services/ayurvedic-shirodhara.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Ayurvedic Shirodhara.jpeg"
+                                        class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Ayurvedic Shirodhara Massage</span>
+                                        <span class="mega-menu-desc">Crown chakra release</span>
+                                    </div>
+                                </a>
+                                <a href="services/body-scrub.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Body Scrub.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Body Scrub Massage</span>
+                                        <span class="mega-menu-desc">Skin renewal</span>
+                                    </div>
+                                </a>
+                                <a href="services/aroma-with-scrub.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Aroma with Scrub.jpeg"
+                                        class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Aroma with Scrub Massage</span>
+                                        <span class="mega-menu-desc">Ultimate dual care</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Specialty & Thermal</h4>
+                                <a href="services/hot-stone.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Hot Stone Therepy.jpeg"
+                                        class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Hot Stone Therapy Massage</span>
+                                        <span class="mega-menu-desc">Volcanic warmth</span>
+                                    </div>
+                                </a>
+                                <a href="services/bamboo-therapy.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Bamboo Therepy.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Bamboo Therapy Massage</span>
+                                        <span class="mega-menu-desc">Deep pressure canes</span>
+                                    </div>
+                                </a>
+                                <a href="services/candle-massage.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Candle.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Candle Massage</span>
+                                        <span class="mega-menu-desc">Warm butter melt</span>
+                                    </div>
+                                </a>
+                                <a href="services/thai-balm.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Thai Balm.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Thai Balm Massage</span>
+                                        <span class="mega-menu-desc">Traditional herbal</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Global & Advanced</h4>
+                                <a href="services/balinese.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Balinese.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Balinese Massage</span>
+                                        <span class="mega-menu-desc">Indonesian pressure</span>
+                                    </div>
+                                </a>
+                                <a href="services/thai-massage.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Thai-Dry.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Thai-Dry Massage</span>
+                                        <span class="mega-menu-desc">Yogic stretching</span>
+                                    </div>
+                                </a>
+                                <a href="services/four-hand.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Four Hand.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Four Hand Massage</span>
+                                        <span class="mega-menu-desc">Dual therapist sync</span>
+                                    </div>
+                                </a>
+                                <a href="services/couples.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Couple.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Couple Massage</span>
+                                        <span class="mega-menu-desc">Share the journey</span>
+                                    </div>
+                                </a>
+                                <a href="services/foot-massage.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Foot.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Foot Massage</span>
+                                        <span class="mega-menu-desc">Reflexology healing</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="book-now.html" class="nav-link cta-nav active"><i class="fab fa-whatsapp"></i> Book Now</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        </div>
+    </nav>
+
+    <a href="https://wa.me/919819893901?text=Hello%20Supen%20Spa%2C%20I%20would%20like%20to%20book%20a%20session."
+        target="_blank" rel="noopener noreferrer" class="whatsapp-floating" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ── HERO ── -->
+    <section class="book-hero">
+        <div class="book-hero-bg"></div>
+        <div class="book-hero-overlay"></div>
+        <div class="book-hero-content">
+            <div class="book-hero-badge">
+                <i class="fas fa-crown"></i> Reserve Your Royal Ritual
+            </div>
+            <h1 class="book-hero-title">Book Your Private<br>Sanctuary Experience</h1>
+            <p class="book-hero-sub">
+                Choose your wellness ritual below and connect instantly via WhatsApp.<br>
+                Same-day availability · No advance payment · 100% Private
+            </p>
+            <div class="trust-pills">
+                <span class="trust-pill"><i class="fas fa-bolt"></i> Instant Confirmation</span>
+                <span class="trust-pill"><i class="fas fa-lock"></i> Completely Private</span>
+                <span class="trust-pill"><i class="fas fa-clock"></i> Open 10 AM – 8 PM</span>
+                <span class="trust-pill"><i class="fas fa-rupee-sign"></i> Pay at Spa</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── WhatsApp Direct Line ── -->
+    <div class="whatsapp-cta-bar">
+        <a href="https://wa.me/919819893901?text=Hello%20Supen%20Spa%2C%20I%20would%20like%20to%20book%20a%20session."
+            target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" style="font-size:1.6rem;"></i>
+            <span>Message us directly on WhatsApp &nbsp;→&nbsp; </span>
+            <span class="wa-number">+91 98198 93901 / +91 98198 93912</span>
+        </a>
+    </div>
+
+    <!-- ── 3-Step Process ── -->
+    <div class="steps-row">
+        <div class="step-btn">
+            <div class="step-num">1</div>
+            <div class="step-label">Choose Your Ritual</div>
+        </div>
+        <div class="step-btn">
+            <div class="step-num">2</div>
+            <div class="step-label">Fill Your Details</div>
+        </div>
+        <div class="step-btn">
+            <div class="step-num">3</div>
+            <div class="step-label">Confirm on WhatsApp</div>
+        </div>
+    </div>
+
+
+    <!-- ── Service Selection ── -->
+    <section class="service-grid-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="hero-badge" style="margin-bottom:1rem;"><i class="fas fa-spa"></i> Step 1 — Select Your
+                    Ritual</div>
+                <h2 class="section-title">Choose Your Experience</h2>
+                <p class="section-subtitle">Click any ritual to instantly open a pre-filled WhatsApp booking message</p>
+                <div class="gold-divider"></div>
+            </div>
+
+            <div class="service-pick-grid">
+
+                <!-- Aromatherapy -->
+                <div class="service-pick-card" onclick="bookService('Aromatherapy Royal Ritual', '₹3,500')" tabindex="0"
+                    role="button" aria-label="Book Aromatherapy Royal Ritual">
+                    <img class="card-img" loading="lazy" src="assets/images/Massage/Message-Aroma.jpeg"
+                        alt="Aromatherapy Royal Ritual">
+                    <div class="card-body">
+                        <span class="card-tag"><i class="fas fa-leaf"></i> 90 min</span>
+                        <div class="card-title">Aromatherapy Royal Ritual</div>
+                        <p class="card-desc">Ancient essential oil blends melted into your body, designed to release
+                            stress and restore clarity.</p>
+                        <div class="card-footer-row">
+                            <span class="card-price">₹3,500</span>
+                            <button class="card-book-btn"><i class="fab fa-whatsapp"></i> Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deep Tissue -->
+                <div class="service-pick-card" onclick="bookService('Deep Tissue & Restoration', '₹3,000')" tabindex="0"
+                    role="button" aria-label="Book Deep Tissue & Restoration">
+                    <img class="card-img" loading="lazy" src="assets/images/Massage/Message-Deep Tissue.jpeg"
+                        alt="Deep Tissue & Restoration">
+                    <div class="card-body">
+                        <span class="card-tag"><i class="fas fa-fire"></i> 90 min</span>
+                        <div class="card-title">Deep Tissue &amp; Restoration</div>
+                        <p class="card-desc">Firm, targeted pressure to release chronic tension and restore muscle
+                            balance deep in the tissue.</p>
+                        <div class="card-footer-row">
+                            <span class="card-price">₹3,000</span>
+                            <button class="card-book-btn"><i class="fab fa-whatsapp"></i> Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hot Stone -->
+                <div class="service-pick-card" onclick="bookService('Hot Stone Therapy Royal', '₹3,800')" tabindex="0"
+                    role="button" aria-label="Book Hot Stone Therapy Royal">
+                    <img class="card-img" loading="lazy" src="assets/images/Massage/Message-Hot Stone Therepy.jpeg"
+                        alt="Hot Stone Therapy Royal">
+                    <div class="card-body">
+                        <span class="card-tag"><i class="fas fa-sun"></i> 90 min</span>
+                        <div class="card-title">Hot Stone Therapy Royal</div>
+                        <p class="card-desc">Volcanic basalt stones heated to perfection, melting away tension with
+                            divine warmth.</p>
+                        <div class="card-footer-row">
+                            <span class="card-price">₹3,800</span>
+                            <button class="card-book-btn"><i class="fab fa-whatsapp"></i> Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thai Dry Massage -->
+                <div class="service-pick-card" onclick="bookService('Thai Dry Massage', '₹3,500')" tabindex="0"
+                    role="button" aria-label="Book Thai Dry Massage">
+                    <img class="card-img" loading="lazy" src="assets/images/Massage/Message-Thai-Dry.jpeg"
+                        alt="Thai Dry Massage">
+                    <div class="card-body">
+                        <span class="card-tag"><i class="fas fa-yin-yang"></i> 90 min</span>
+                        <div class="card-title">Thai Dry Massage</div>
+                        <p class="card-desc">Traditional Thai techniques combining rhythmic pressure and assisted
+                            stretching for full-body liberation.</p>
+                        <div class="card-footer-row">
+                            <span class="card-price">₹3,500</span>
+                            <button class="card-book-btn"><i class="fab fa-whatsapp"></i> Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swedish -->
+                <div class="service-pick-card" onclick="bookService('Swedish Massage', '₹3,000')" tabindex="0"
+                    role="button" aria-label="Book Swedish Massage">
+                    <img class="card-img" loading="lazy" src="assets/images/Massage/Message-Swedish.jpeg"
+                        alt="Swedish Massage">
+                    <div class="card-body">
+                        <span class="card-tag"><i class="fas fa-spa"></i> 60–90 min</span>
+                        <div class="card-title">Swedish Massage</div>
+                        <p class="card-desc">Gentle flowing strokes to soothe the nervous system, improve circulation,
+                            and ease full-body fatigue.</p>
+                        <div class="card-footer-row">
+                            <span class="card-price">₹3,000</span>
+                            <button class="card-book-btn"><i class="fab fa-whatsapp"></i> Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Balinese -->
+                <div class="service-pick-card" onclick="bookService('Balinese Massage', '₹3,500')" tabindex="0"
+                    role="button" aria-label="Book Balinese Massage">
+                    <img class="card-img" loading="lazy" src="assets/images/Massage/Message-Balinese.jpeg"
+                        alt="Balinese Massage">
+                    <div class="card-body">
+                        <span class="card-tag"><i class="fas fa-wind"></i> 90 min</span>
+                        <div class="card-title">Balinese Massage</div>
+                        <p class="card-desc">Inspired by Balinese healing traditions, blending deep pressure,
+                            acupressure, and warming oils.</p>
+                        <div class="card-footer-row">
+                            <span class="card-price">₹3,500</span>
+                            <button class="card-book-btn"><i class="fab fa-whatsapp"></i> Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Body Scrub -->
+                <div class="service-pick-card" onclick="bookService('Body Scrub & Renewal', '₹4,500')" tabindex="0"
+                    role="button" aria-label="Book Body Scrub & Renewal">
+                    <img class="card-img" loading="lazy" src="assets/images/Massage/Message-Body Scrub.jpeg"
+                        alt="Body Scrub & Renewal">
+                    <div class="card-body">
+                        <span class="card-tag"><i class="fas fa-seedling"></i> 90 min</span>
+                        <div class="card-title">Body Scrub &amp; Renewal</div>
+                        <p class="card-desc">Exfoliation ritual using premium botanical scrubs to reveal glowing,
+                            revitalised skin beneath.</p>
+                        <div class="card-footer-row">
+                            <span class="card-price">₹4,500</span>
+                            <button class="card-book-btn"><i class="fab fa-whatsapp"></i> Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Couples -->
+                <div class="service-pick-card" onclick="bookService('Couples Royal Retreat', '₹7,500')" tabindex="0"
+                    role="button" aria-label="Book Couples Royal Retreat">
+                    <img class="card-img" loading="lazy" src="assets/images/Massage/Message-Couple.jpeg"
+                        alt="Couples Royal Retreat">
+                    <div class="card-body">
+                        <span class="card-tag"><i class="fas fa-heart"></i> 120 min</span>
+                        <div class="card-title">Couples Royal Retreat</div>
+                        <p class="card-desc">A shared sanctuary experience for two — with dual therapists, mood lighting
+                            and premium oils.</p>
+                        <div class="card-footer-row">
+                            <span class="card-price">₹7,500</span>
+                            <button class="card-book-btn"><i class="fab fa-whatsapp"></i> Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signature Royal -->
+                <div class="service-pick-card signature-card"
+                    onclick="bookService('✦ Signature Royal Ritual', '₹20,000')" tabindex="0" role="button"
+                    aria-label="Book Signature Royal Ritual">
+                    <img class="card-img" loading="lazy" src="assets/images/Posters/Message-1.jpeg"
+                        alt="Signature Royal Ritual">
+                    <div class="card-body">
+                        <span class="card-tag"
+                            style="background:rgba(255,215,0,0.15);border-color:rgba(255,215,0,0.5);"><i
+                                class="fas fa-crown"></i> Elite · 120 min</span>
+                        <div class="card-title"
+                            style="background:linear-gradient(90deg,#FFD700,#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                            ✦ Signature Royal Ritual</div>
+                        <p class="card-desc">Our supreme multi-therapy masterpiece — the pinnacle of private wellness.
+                            Curated exclusively for elite guests.</p>
+                        <div class="card-footer-row">
+                            <span class="card-price" style="font-size:1.5rem;">₹20,000</span>
+                            <button class="card-book-btn" style="background:linear-gradient(135deg,#FFD700,#FFA500);"><i
+                                    class="fas fa-crown"></i> Reserve Now</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ── Quick Booking Form + Guarantee Panel ── -->
+    <section class="booking-panel-section">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:3rem;">
+                <div class="hero-badge" style="margin-bottom:1rem;"><i class="fas fa-paper-plane"></i> Step 2 &amp; 3 —
+                    Send Your Details</div>
+                <h2 class="section-title">Quick Booking Form</h2>
+                <p class="section-subtitle">Fill in your name, preferred service and time — we'll confirm via WhatsApp
+                    instantly</p>
+                <div class="gold-divider"></div>
+            </div>
+            <div class="booking-panel-grid">
+                <div>
+                    <div class="panel-left-title">Reserve in 30 Seconds</div>
+                    <p class="panel-subtitle">No sign-up, no forms to submit. Just WhatsApp — fast, private, and
+                        effortless.</p>
+
+                    <label class="bk-label">Your Name</label>
+                    <input class="bk-input" type="text" id="bkName" placeholder="e.g. Priya Sharma" autocomplete="name">
+
+                    <label class="bk-label">Preferred Ritual</label>
+                    <select class="bk-select" id="bkService">
+                        <option value="">Select your ritual...</option>
+                        <option>Signature Royal Ritual</option>
+                        <option>Swedish Massage</option>
+                        <option>Deep Tissue Massage</option>
+                        <option>Aroma Massage</option>
+                        <option>Ayurvedic Potli Massage</option>
+                        <option>Ayurvedic Shirodhara Massage</option>
+                        <option>Body Scrub Massage</option>
+                        <option>Aroma with Scrub Massage</option>
+                        <option>Hot Stone Therapy Massage</option>
+                        <option>Bamboo Therapy Massage</option>
+                        <option>Candle Massage</option>
+                        <option>Thai Balm Massage</option>
+                        <option>Balinese Massage</option>
+                        <option>Thai-Dry Massage</option>
+                        <option>Four Hand Massage</option>
+                        <option>Couple Massage</option>
+                        <option>Foot Massage</option>
+                    </select>
+
+                    <label class="bk-label">Preferred Date &amp; Time</label>
+                    <input class="bk-input" type="text" id="bkTime" placeholder="e.g. Tomorrow 5 PM, Saturday morning">
+
+                    <label class="bk-label">Special Request (optional)</label>
+                    <input class="bk-input" type="text" id="bkNote"
+                        placeholder="e.g. Female therapist preferred, anniversary setup...">
+
+                    <button class="bk-submit" onclick="sendBookWA()">
+                        <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i>
+                        Send Booking via WhatsApp
+                    </button>
+                    <p class="no-payment-note"><i class="fas fa-shield-alt"
+                            style="color:var(--color-gold);margin-right:4px;"></i> No advance payment required. Pay at
+                        the spa on arrival.</p>
+                </div>
+
+                <div>
+                    <div class="guarantee-panel">
+                        <div class="guarantee-title"><i class="fas fa-award"></i> Our Booking Guarantee</div>
+
+                        <div class="guarantee-item">
+                            <div class="g-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="g-text">
+                                <strong>Instant Confirmation</strong>
+                                <p>We respond to all WhatsApp messages within minutes during operating hours (6 AM – 10
+                                    PM).</p>
+                            </div>
+                        </div>
+                        <div class="guarantee-item">
+                            <div class="g-icon"><i class="fas fa-lock"></i></div>
+                            <div class="g-text">
+                                <strong>100% Confidential</strong>
+                                <p>Your session and personal details are completely private. Absolute discretion
+                                    guaranteed.</p>
+                            </div>
+                        </div>
+                        <div class="guarantee-item">
+                            <div class="g-icon"><i class="fas fa-calendar-check"></i></div>
+                            <div class="g-text">
+                                <strong>Free Reschedule</strong>
+                                <p>Plans change. Reschedule or cancel anytime via WhatsApp — no penalty, no hassle.</p>
+                            </div>
+                        </div>
+                        <div class="guarantee-item">
+                            <div class="g-icon"><i class="fas fa-rupee-sign"></i></div>
+                            <div class="g-text">
+                                <strong>Pay at the Spa</strong>
+                                <p>No online payment, no card details. Pay conveniently in-person at your scheduled
+                                    session.</p>
+                            </div>
+                        </div>
+
+                        <a class="g-whatsapp-btn" href="https://wa.me/919819893901" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i>
+                            Chat: +91 98198 93901 / +91 98198 93912
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ── Opening Hours Strip ── -->
+    <div class="hours-strip">
+        <div class="hours-grid">
+            <div class="hours-item">
+                <div class="hours-icon"><i class="fas fa-clock"></i></div>
+                <div class="hours-text">
+                    <strong>Open Daily</strong>
+                    <span>10:00 AM – 8:00 PM</span>
+                </div>
+            </div>
+            <div class="hours-divider"></div>
+            <div class="hours-item">
+                <div class="hours-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="hours-text">
+                    <strong>Location</strong>
+                    <span>Bandra West, Mumbai 400050</span>
+                </div>
+            </div>
+            <div class="hours-divider"></div>
+            <div class="hours-item">
+                <div class="hours-icon"><i class="fab fa-whatsapp"></i></div>
+                <div class="hours-text">
+                    <strong>WhatsApp</strong>
+                    <span>+91 98198 93901 / +91 98198 93912</span>
+                </div>
+            </div>
+            <div class="hours-divider"></div>
+            <div class="hours-item">
+                <div class="hours-icon"><i class="fas fa-envelope"></i></div>
+                <div class="hours-text">
+                    <strong>Email</strong>
+                    <span>info@supenspa.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img loading="lazy" src="assets/images/Supen-Spa-Logo.png" alt="Supen Spa"
+                    style="width:160px; margin-bottom:1.5rem;">
+                <p>Mumbai's most exclusive private wellness sanctuary. Where ancient healing wisdom meets modern royal
+                    luxury.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/SupenSpa" target="_blank" rel="noopener noreferrer"
+                        aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/SupenSpa" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://maps.app.goo.gl/WL49kDy8vQZiVKa76" target="_blank" rel="noopener noreferrer"
+                        aria-label="Google"><i class="fab fa-google"></i></a>
+                    <a href="https://wa.me/919819893901" target="_blank" rel="noopener noreferrer"
+                        aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="services.html">Rituals</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Wellness Rituals</h4>
+                <ul>
+                    <li><a href="services/signature.html">Signature Ritual</a></li>
+                    <li><a href="services/aromatherapy.html">Aromatherapy</a></li>
+                    <li><a href="services/deep-tissue.html">Deep Tissue</a></li>
+                    <li><a href="services/hot-stone.html">Hot Stone</a></li>
+                    <li><a href="services/thai-massage.html">Thai Dry Massage</a></li>
+                    <li><a href="services/couples.html">Couples Retreat</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Private Sanctuary</h4>
+                <p><i class="fas fa-map-marker-alt" style="color:var(--color-gold); margin-right:8px;"></i> 1st Floor,
+                    Link Corner Mall,<br>33rd "Teresa" Rd, Off Link Road,<br>Beside Starbucks Coffee,<br>Bandra West,
+                    Mumbai 400050</p>
+                <p><i class="fab fa-whatsapp" style="color:var(--color-gold); margin-right:8px;"></i> +91 98198 93901
+                </p>
+                <p><i class="fas fa-phone-alt" style="color:var(--color-gold); margin-right:8px;"></i> +91 98198 93912
+                </p>
+                <p><i class="fas fa-envelope" style="color:var(--color-gold); margin-right:8px;"></i> info@supenspa.com
+                </p>
+                <p><i class="fas fa-clock" style="color:var(--color-gold); margin-right:8px;"></i> 10:00 AM – 8:00 PM
+                    Daily</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Supen Spa. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a></p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">built with <i class="fas fa-heart"
+                    style="color: red; font-size: 0.75rem;"></i> by <a href="https://vividcodestudio.web.app"
+                    target="_blank" rel="noopener noreferrer" style="color: var(--color-gold);">ViViD Code Studio</a>, a
+                dev unit of <a href="https://vividglobal.in" target="_blank" rel="noopener noreferrer"
+                    style="color: #fff; font-weight: bold;">"ViViD Global Services"</a></p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Booking via card click
+        function bookService(name, price) {
+            const text = `Hello Supen Spa, I would like to book the *${name}* (${price}). Please confirm availability and my preferred time. Thank you!`;
+            window.open('https://wa.me/919819893901?text=' + encodeURIComponent(text), '_blank');
+        }
+
+        // Quick-form WhatsApp send
+        function sendBookWA() {
+            const name = document.getElementById('bkName').value.trim();
+            const service = document.getElementById('bkService').value || 'a wellness session';
+            const time = document.getElementById('bkTime').value.trim();
+            const note = document.getElementById('bkNote').value.trim();
+
+            if (!name) {
+                document.getElementById('bkName').focus();
+                document.getElementById('bkName').style.borderColor = '#ff6b6b';
+                return;
+            }
+
+            let msg = `Hello Supen Spa! 🙏\n\nI would like to book: *${service}*\nName: ${name}`;
+            if (time) msg += `\nPreferred time: ${time}`;
+            if (note) msg += `\nSpecial request: ${note}`;
+            msg += '\n\nPlease confirm availability. Thank you!';
+
+            window.open('https://wa.me/919819893901?text=' + encodeURIComponent(msg), '_blank');
+        }
+
+        // Enter key on form fields
+        ['bkName', 'bkService', 'bkTime', 'bkNote'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('keydown', e => { if (e.key === 'Enter') sendBookWA(); });
+        });
+
+        // Keyboard accessibility for cards
+        document.querySelectorAll('.service-pick-card').forEach(card => {
+            card.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.click();
+                }
+            });
+        });
+
+        // Reset border color on focus
+        document.getElementById('bkName').addEventListener('input', function () {
+            this.style.borderColor = '';
+        });
+
+        // Scroll reveal
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.scroll-reveal').forEach(el => obs.observe(el));
+    </script>
+
+</body>
+
+</html>

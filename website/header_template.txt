@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://wa.me https://maps.google.com https://maps.gstatic.com; connect-src 'self';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Supen Spa – Mumbai's most exclusive private wellness sanctuary. Premium aromatherapy, deep tissue, hot stone, Thai & luxury massage therapies in Bandra.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://supenspa.com/">
+    <meta property="og:title" content="Supen Spa – Royal Luxury Wellness Sanctuary">
+    <meta property="og:description"
+        content="Mumbai's most exclusive private wellness sanctuary in Bandra. Experience ancient healing rituals.">
+    <meta property="og:image" content="https://supenspa.com/assets/images/Supen-Spa-Logo.png">
+    <meta name="keywords"
+        content="luxury spa mumbai, premium spa bandra, aromatherapy spa, deep tissue massage, hot stone therapy, wellness sanctuary">
+    <meta name="author" content="Supen Spa">
+    <title>Supen Spa – Royal Luxury Wellness Sanctuary | Bandra, Mumbai</title>
+    <link crossorigin="anonymous"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="icon" type="image/png" href="assets/images/Supen-Spa-Logo.png">
+    <meta name="theme-color" content="#0E0620">
+    <meta name="theme-color" content="#0E0620">
+    <style>
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Supen Spa",
+      "image": "https://supenspa.com/assets/images/Supen-Spa-Logo.png",
+      "url": "https://supenspa.com/",
+      "telephone": "+919819893901",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bandra West",
+        "addressLocality": "Mumbai",
+        "addressRegion": "MH",
+        "postalCode": "400050",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 19.0596,
+        "longitude": 72.8295
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "10:00",
+        "closes": "20:00"
+      },
+      "priceRange": "$$$"
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Transparent Header / Navigation -->
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/images/Supen-Spa-Logo.png" alt="Supen Spa – Royal Luxury Wellness Sanctuary"
+                        class="logo-img">
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <div class="nav-item-dropdown">
+                    <a href="services.html" class="nav-link">Rituals <i class="fas fa-chevron-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container">
+                            <div class="mega-menu-column">
+                                <h4>Signature & Popular</h4>
+                                <a href="services/signature.html" class="mega-menu-item">
+                                    <img src="assets/images/Posters/Message-1.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Signature Ritual</span>
+                                        <span class="mega-menu-desc">Royal 120m experience</span>
+                                    </div>
+                                </a>
+                                <a href="services/swedish.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Swedish.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Swedish Massage</span>
+                                        <span class="mega-menu-desc">Classic relaxation</span>
+                                    </div>
+                                </a>
+                                <a href="services/deep-tissue.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Deep Tissue.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Deep Tissue</span>
+                                        <span class="mega-menu-desc">Muscle restoration</span>
+                                    </div>
+                                </a>
+                                <a href="services/aromatherapy.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Aroma.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Aromatherapy</span>
+                                        <span class="mega-menu-desc">Essential oil healing</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Ayurvedic & Rejuv</h4>
+                                <a href="services/ayurvedic-potli.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Ayurvedic Potli.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Ayurvedic Potli</span>
+                                        <span class="mega-menu-desc">Herbal compress</span>
+                                    </div>
+                                </a>
+                                <a href="services/ayurvedic-shirodhara.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Ayurvedic Shirodhara.jpeg"
+                                        class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Shirodhara</span>
+                                        <span class="mega-menu-desc">Crown chakra release</span>
+                                    </div>
+                                </a>
+                                <a href="services/body-scrub.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Body Scrub.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Body Scrub</span>
+                                        <span class="mega-menu-desc">Skin renewal</span>
+                                    </div>
+                                </a>
+                                <a href="services/aroma-with-scrub.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Aroma with Scrub.jpeg"
+                                        class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Aroma + Scrub</span>
+                                        <span class="mega-menu-desc">Ultimate dual care</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Specialty & Thermal</h4>
+                                <a href="services/hot-stone.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Hot Stone Therepy.jpeg"
+                                        class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Hot Stone</span>
+                                        <span class="mega-menu-desc">Volcanic warmth</span>
+                                    </div>
+                                </a>
+                                <a href="services/bamboo-therapy.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Bamboo Therepy.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Bamboo Therapy</span>
+                                        <span class="mega-menu-desc">Deep pressure canes</span>
+                                    </div>
+                                </a>
+                                <a href="services/candle-massage.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Candle.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Candle Massage</span>
+                                        <span class="mega-menu-desc">Warm butter melt</span>
+                                    </div>
+                                </a>
+                                <a href="services/thai-balm.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Thai Balm.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Thai Balm</span>
+                                        <span class="mega-menu-desc">Traditional herbal</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Global & Advanced</h4>
+                                <a href="services/balinese.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Balinese.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Balinese</span>
+                                        <span class="mega-menu-desc">Indonesian pressure</span>
+                                    </div>
+                                </a>
+                                <a href="services/thai-massage.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Thai-Dry.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Thai Dry</span>
+                                        <span class="mega-menu-desc">Yogic stretching</span>
+                                    </div>
+                                </a>
+                                <a href="services/four-hand.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Four Hand.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Four Hand</span>
+                                        <span class="mega-menu-desc">Dual therapist sync</span>
+                                    </div>
+                                </a>
+                                <a href="services/couples.html" class="mega-menu-item">
+                                    <img src="assets/images/Massage/Message-Couple.jpeg" class="mega-menu-img">
+                                    <div class="mega-menu-content">
+                                        <span class="mega-menu-title">Couple Retreat</span>
+                                        <span class="mega-menu-desc">Share the journey</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="book-now.html" class="nav-link cta-nav"><i class="fab fa-whatsapp"></i> Book Now</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <a href="https://wa.me/919819893901?text=Hello%20Supen%20Spa%2C%20I%20would%20like%20to%20book%20a%20session."
+        target="_blank" rel="noopener noreferrer" class="whatsapp-floating" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-carousel" id="heroCarousel">
+            <div class="carousel-slide active">
+                <div class="slide-image" style="background-image: url('assets/images/Banner/Banners-1.jpeg');"></div>
+            </div>
+            <div class="carousel-slide">
+                <div class="slide-image" style="background-image: url('assets/images/Banner/Banners-2.jpeg');"></div>
+            </div>
+            <div class="carousel-slide">
+                <div class="slide-image" style="background-image: url('assets/images/Banner/Banners-3.jpeg');"></div>
+            </div>
+            <div class="carousel-slide">
+                <div class="slide-image" style="background-image: url('assets/images/Banner/Banners-4.jpeg');"></div>
+            </div>
+            <div class="carousel-slide">
+                <div class="slide-image" style="background-image: url('assets/images/Banner/Banners-5.jpeg');"></div>
+            </div>
+            <!-- Deep Purple + Maroon dark overlay -->
+            <div class="carousel-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge"><i class="fas fa-crown"></i> Mumbai's Premier Wellness Sanctuary</div>
+            <p class="hero-tagline">Est. Bandra, Mumbai</p>
+            <h1 class="hero-title">Awaken Your Senses.<br>Restore Your Soul.</h1>
+            <p class="hero-description">Where ancient healing wisdom meets modern royal luxury.<br>Private · Premium ·
+                Transformative</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">9+</div>
+                    <div class="stat-label">Rituals</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Happy Guests</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Private</div>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="book-now.html" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Book Your Experience</a>
+                <a href="assets/images/Supen Spa-Menu.pdf" download="Supen_Spa_Menu.pdf" class="btn btn-secondary"><i
+                        class="fas fa-file-pdf"></i> Download Spa Menu</a>
+            </div>
+        </div>
+        <!-- Glowing progress bar instead of dots -->
+        <div class="hero-progress-bar" id="heroProgressBar"></div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="about-preview section-bg-botanicals scroll-reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Welcome to Supen Spa</h2>
+                <p class="section-subtitle">A sanctuary where ancient wisdom meets contemporary luxury — exclusively in
+                    Bandra, Mumbai</p>
+                <div class="gold-divider"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="lead-text">Step into Mumbai's most exclusive private wellness sanctuary. Supen Spa is
+                        meticulously designed for elite clientele who understand that true wellness is not a luxury — it
+                        is a necessity.</p>
+                    <p>Our expert therapists combine ancient healing traditions from across Asia with modern therapeutic
+                        science, using only the finest premium oils and personalised techniques tailored to your body's
+                        unique needs.</p>
+                    <div style="display:flex;gap:2rem;margin:1.5rem 0;flex-wrap:wrap;">
+                        <div><strong style="color:var(--color-gold);display:block;font-size:1.3rem;">♀ &amp;
+                                ♂</strong><span style="font-size:0.85rem;color:rgba(255,255,255,0.6);">Therapists
+                                Available</span></div>
+                        <div><strong style="color:var(--color-gold);display:block;font-size:1.3rem;">100%</strong><span
+                                style="font-size:0.85rem;color:rgba(255,255,255,0.6);">Private Sessions</span></div>
+                        <div><strong style="color:var(--color-gold);display:block;font-size:1.3rem;">10 AM–8
+                                PM</strong><span style="font-size:0.85rem;color:rgba(255,255,255,0.6);">Daily</span>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary" style="margin-top:0.5rem;">Learn Our Story &rarr;</a>
+                </div>
+                <div class="about-image">
+                    <img loading="lazy" src="assets/images/Spa-3.jpeg" alt="Supen Spa Premium Interior"
+                        class="glass-image" style="border-radius:16px;">
+                </div>
+            </div>
+        </div>
+    </section>
+

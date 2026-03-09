@@ -8,6 +8,6 @@
 | :--- | :--- | :--- |
 | 🟢 | **CSS syntax error fixed** (extra `}` in booking-form-element) | Done |
 | 🟢 | **Animated gradient on all text** (headings, paragraphs, links, hero, testimonials, footer, forms, etc.) | Done |
-| 🟢 | **Navigation links updated** (pages/ → website-pages/ with correct filenames) | Done |
+| 🟢 | **Navigation links updated** (pages/ → website/ with correct filenames) | Done |
 | 🟢 | **PROGRESS.md dashboard created** | Done |
 | ⚪ | **Optional: Add Gallery/Blog/Testimonials pages** (links currently point to Contact/Services) | Pending |

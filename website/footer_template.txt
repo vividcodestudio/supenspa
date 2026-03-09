@@ -1,0 +1,100 @@
+                    <li><a href="services/thai-massage.html">Thai Dry Massage</a></li>
+                    <li><a href="services/couples.html">Couples Retreat</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Private Sanctuary</h4>
+                <p><i class="fas fa-map-marker-alt" style="color:var(--color-gold); margin-right:8px;"></i> 1st Floor,
+                    Link Corner Mall,<br>33rd "Teresa" Rd, Off Link Road,<br>Beside Starbucks Coffee,<br>Bandra West,
+                    Mumbai 400050</p>
+                <p><i class="fas fa-phone-alt" style="color:var(--color-gold); margin-right:8px;"></i> +91 98198 93901 /
+                    +91 98198 93912
+                </p>
+                <p><i class="fas fa-envelope" style="color:var(--color-gold); margin-right:8px;"></i> info@supenspa.com
+                </p>
+                <p><i class="fas fa-clock" style="color:var(--color-gold); margin-right:8px;"></i> 10:00 AM – 8:00 PM
+                    Daily</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Supen Spa. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a></p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">built with <i class="fas fa-heart"
+                    style="color: red; font-size: 0.75rem;"></i> by <a href="https://vividcodestudio.com"
+                    target="_blank" rel="noopener noreferrer" style="color: var(--color-gold);">ViViD Code Studio</a>, a
+                dev unit of <strong style="color: #fff;">"ViViD Global Services"</strong></p>
+        </div>
+    </footer>
+
+
+
+
+    <!-- JS -->
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Carousel — no dots, just smooth auto-rotation
+        const slides = document.querySelectorAll('.carousel-slide');
+        const progressBar = document.getElementById('heroProgressBar');
+        let current = 0;
+        const INTERVAL = 7000;
+
+        function resetProgress() {
+            if (!progressBar) return;
+            progressBar.style.transition = 'none';
+            progressBar.style.width = '0%';
+            // Force reflow then animate
+            progressBar.getBoundingClientRect();
+            progressBar.style.transition = 'width ' + INTERVAL + 'ms linear';
+            progressBar.style.width = '100%';
+        }
+
+        function goTo(n) {
+            if (slides.length === 0) return;
+            const outgoing = slides[current];
+            outgoing.classList.remove('active');
+            outgoing.classList.add('leaving');
+
+            current = (n + slides.length) % slides.length;
+            slides[current].classList.add('active');
+
+            // Clean up .leaving after crossfade completes (2.4s)
+            setTimeout(() => outgoing.classList.remove('leaving'), 2400);
+
+            resetProgress();
+        }
+
+        if (slides.length > 1) {
+            resetProgress();
+            setInterval(() => goTo(current + 1), INTERVAL);
+        }
+
+        if (slides.length > 0) slides[0].classList.add('active');
+
+        // Scroll Reveal — reliable version
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    revealObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+
+        const revealEls = document.querySelectorAll('.scroll-reveal');
+        revealEls.forEach(el => revealObserver.observe(el));
+
+        // Hard fallback: force-show any still-hidden elements after 1.8s
+        setTimeout(() => {
+            revealEls.forEach(el => el.classList.add('visible'));
+        }, 1800);
+
+        // Mobile Menu
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            const hbg = document.getElementById('hamburger');
+            menu.classList.toggle('active');
+            hbg.classList.toggle('open');
+        }
+    </script>
+</body>
+
+</html>
