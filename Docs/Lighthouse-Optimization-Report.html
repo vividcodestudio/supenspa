@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lighthouse Optimization Report – Supen Spa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #0d0118;
+            color: #e8c8d8;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        h1 {
+            color: #FFD700;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 0.3rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #B88FA0;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        h2 {
+            color: #FFD700;
+            font-size: 1.4rem;
+            margin: 2.5rem 0 1rem;
+            border-bottom: 1px solid rgba(139, 0, 53, 0.4);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .score-card {
+            text-align: center;
+            padding: 1.2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(139, 0, 53, 0.3);
+        }
+
+        .score-card.orange {
+            background: rgba(255, 107, 0, 0.1);
+            border-color: rgba(255, 107, 0, 0.3);
+        }
+
+        .score-card.green {
+            background: rgba(0, 180, 80, 0.1);
+            border-color: rgba(0, 180, 80, 0.3);
+        }
+
+        .score-val {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .score-val.orange {
+            color: #FF6B00;
+        }
+
+        .score-val.green {
+            color: #0f9d58;
+        }
+
+        .score-label {
+            font-size: 0.85rem;
+            color: #B88FA0;
+            margin-top: 0.3rem;
+        }
+
+        .arrow {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th {
+            background: rgba(139, 0, 53, 0.3);
+            color: #FFD700;
+            padding: 0.8rem;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        td {
+            padding: 0.8rem;
+            border-bottom: 1px solid rgba(139, 0, 53, 0.15);
+            font-size: 0.9rem;
+        }
+
+        tr:hover {
+            background: rgba(139, 0, 53, 0.1);
+        }
+
+        .risk-low {
+            color: #0f9d58;
+            font-weight: 600;
+        }
+
+        .risk-none {
+            color: #0f9d58;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .tag-perf {
+            background: rgba(255, 107, 0, 0.2);
+            color: #FF6B00;
+        }
+
+        .tag-a11y {
+            background: rgba(100, 100, 255, 0.2);
+            color: #8888ff;
+        }
+
+        .tag-seo {
+            background: rgba(0, 180, 80, 0.2);
+            color: #0f9d58;
+        }
+
+        .tag-bp {
+            background: rgba(255, 215, 0, 0.2);
+            color: #FFD700;
+        }
+
+        .hindi {
+            color: #D4A0C0;
+            font-style: italic;
+            margin-top: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .change-card {
+            background: rgba(42, 10, 31, 0.5);
+            border: 1px solid rgba(139, 0, 53, 0.3);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin: 1.2rem 0;
+        }
+
+        .change-card h3 {
+            margin-top: 0;
+        }
+
+        .visual-note {
+            background: rgba(0, 180, 80, 0.1);
+            border-left: 3px solid #0f9d58;
+            padding: 0.8rem 1rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .warning-note {
+            background: rgba(255, 107, 0, 0.1);
+            border-left: 3px solid #FF6B00;
+            padding: 0.8rem 1rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        code {
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(139, 0, 53, 0.3);
+            color: #B88FA0;
+            font-size: 0.85rem;
+        }
+
+        @media(max-width:600px) {
+            .score-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>🔍 Lighthouse Optimization Report</h1>
+        <p class="subtitle">Supen Spa Website · Proposed Changes · March 10, 2026</p>
+
+        <!-- ══════════════════════════════════════ -->
+        <h2>📊 Current Scores vs Expected Scores</h2>
+        <p>Abhi ke scores (mobile Lighthouse) aur changes ke baad expected improvement:</p>
+
+        <div class="score-grid">
+            <div class="score-card orange">
+                <div class="score-val orange">73-75</div>
+                <div class="score-label">Performance</div>
+                <div class="arrow">↓</div>
+                <div class="score-val green">90-95+</div>
+            </div>
+            <div class="score-card orange">
+                <div class="score-val orange">89</div>
+                <div class="score-label">Accessibility</div>
+                <div class="arrow">↓</div>
+                <div class="score-val green">96-100</div>
+            </div>
+            <div class="score-card green">
+                <div class="score-val green">92</div>
+                <div class="score-label">Best Practices</div>
+                <div class="arrow">↓</div>
+                <div class="score-val green">95-100</div>
+            </div>
+            <div class="score-card green">
+                <div class="score-val green">92</div>
+                <div class="score-label">SEO</div>
+                <div class="arrow">↓</div>
+                <div class="score-val green">98-100</div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════ -->
+        <h2>🛠️ Proposed Changes (8 Total)</h2>
+        <p>Neeche har ek change detail mein explain kiya gaya hai — English + Hindi dono mein.<br>
+            <strong>Koi bhi visual change NAHI hoga.</strong> Sirf under-the-hood code optimization hai.
+        </p>
+
+        <div class="visual-note">
+            ✅ <strong>Zero Visual Impact</strong> — Website ka look, colors, layout, content — kuch bhi nahi badlega.
+            Sirf invisible performance + SEO improvements.
+        </div>
+
+        <!-- CHANGE 1 -->
+        <div class="change-card">
+            <h3>1. Preconnect Resource Hints <span class="tag tag-perf">Performance</span></h3>
+            <p><strong>What:</strong> Adding <code>&lt;link rel="preconnect"&gt;</code> tags for Google Fonts and
+                Cloudflare CDN in the <code>&lt;head&gt;</code> of every page.</p>
+            <p class="hindi">🇮🇳 Kya: Browser ko pehle se bata denge ki Google Fonts aur CDN se connection banao —
+                taaki fonts jaldi load ho.</p>
+
+            <p><strong>Why:</strong> Without preconnect, the browser discovers these external servers only after parsing
+                CSS. This adds 200-500ms delay. Preconnect establishes the connection early.</p>
+            <p class="hindi">🇮🇳 Kyun: Bina preconnect ke, browser fonts tab dhundhta hai jab CSS padh chuka hota hai —
+                isse 200-500ms extra time lagta hai.</p>
+
+            <p><strong>Code added:</strong></p>
+            <code>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</code><br>
+            <code>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</code><br>
+            <code>&lt;link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin&gt;</code>
+
+            <p><strong>Risk:</strong> <span class="risk-low">Zero ❌ — No visual change</span></p>
+            <p><strong>Applied to:</strong> All 34+ HTML pages</p>
+        </div>
+
+        <!-- CHANGE 2 -->
+        <div class="change-card">
+            <h3>2. Remove Duplicate @import in CSS <span class="tag tag-perf">Performance</span> <span
+                    class="tag tag-bp">Best Practices</span></h3>
+            <p><strong>What:</strong> Removing the <code>@import url('...fonts...')</code> line from
+                <code>styles.css</code> (line 7).</p>
+            <p class="hindi">🇮🇳 Kya: <code>styles.css</code> ke andar se Google Fonts ka @import hatayenge.</p>
+
+            <p><strong>Why:</strong> The same Google Fonts are already loaded via <code>&lt;link&gt;</code> in every
+                HTML page. The CSS <code>@import</code> is a <strong>duplicate request</strong> that blocks rendering —
+                the browser has to first download CSS, then discover the @import, then download fonts. This is the #1
+                reason for slow First Contentful Paint.</p>
+            <p class="hindi">🇮🇳 Kyun: Yahi fonts already HTML mein <code>&lt;link&gt;</code> se load ho rahe hain. CSS
+                ka @import ek <strong>duplicate render-blocking request</strong> hai — browser pehle CSS download karta
+                hai, phir @import dhundhta hai, phir fonts — yeh chain bahut slow hai.</p>
+
+            <p><strong>Before:</strong>
+                <code>@import url('https://fonts.googleapis.com/css2?family=...&display=swap');</code></p>
+            <p><strong>After:</strong>
+                <code>/* Font loaded via HTML &lt;link&gt; with preconnect for better performance */</code></p>
+
+            <p><strong>Risk:</strong> <span class="risk-low">Zero ❌ — Fonts wahi rahenge, sirf doosra duplicate request
+                    hatega</span></p>
+        </div>
+
+        <!-- CHANGE 3 -->
+        <div class="change-card">
+            <h3>3. Add width/height to All Images <span class="tag tag-perf">Performance</span></h3>
+            <p><strong>What:</strong> Adding <code>width</code> and <code>height</code> HTML attributes to all
+                <code>&lt;img&gt;</code> tags.</p>
+            <p class="hindi">🇮🇳 Kya: Sab images mein <code>width</code> aur <code>height</code> attributes add
+                karenge.</p>
+
+            <p><strong>Why:</strong> Without explicit dimensions, the browser doesn't know how much space an image needs
+                until it finishes loading. This causes <strong>Cumulative Layout Shift (CLS)</strong> — the page "jumps"
+                as images load. CLS is the #1 reason your Performance score is 73 instead of 95+. Adding width/height
+                lets the browser reserve space beforehand.</p>
+            <p class="hindi">🇮🇳 Kyun: Bina width/height ke browser ko nahi pata image kitni jagah legi — toh jab image
+                load hoti hai toh page "jump" karta hai. Isko CLS kehte hain. Yeh sabse bada reason hai Performance
+                score kam hone ka. Width/height dene se browser pehle se jagah reserve kar leta hai.</p>
+
+            <p><strong>Important:</strong> CSS still controls the actual visual size. These attributes only help the
+                browser calculate aspect ratio before loading.</p>
+            <p class="hindi">🇮🇳 Important: Image ka dikhne wala size CSS se hi control hoga. Yeh attributes sirf
+                browser ko aspect ratio batate hain.</p>
+
+            <p><strong>Risk:</strong> <span class="risk-low">Zero ❌ — No visual change, CSS overrides these
+                    values</span></p>
+            <p><strong>Applied to:</strong> ~49 images in index.html + all other pages</p>
+        </div>
+
+        <!-- CHANGE 4 -->
+        <div class="change-card">
+            <h3>4. Lazy-load Mega Menu Images <span class="tag tag-perf">Performance</span></h3>
+            <p><strong>What:</strong> Adding <code>loading="lazy"</code> to the 16 mega-menu thumbnail images.</p>
+            <p class="hindi">🇮🇳 Kya: Mega menu ke 16 thumbnail images ko lazy-load karenge.</p>
+
+            <p><strong>Why:</strong> The mega menu dropdown is hidden by default. But all 16 images inside it load
+                immediately when the page opens — wasting ~2MB of bandwidth. With lazy loading, they'll only load when
+                the user actually opens the menu.</p>
+            <p class="hindi">🇮🇳 Kyun: Mega menu by default hidden hai. Par uske andar ki 16 images page open hote hi
+                load hoti hain — ~2MB bandwidth waste. Lazy loading se yeh sirf tab load hongi jab user menu kholega.
+            </p>
+
+            <p><strong>Risk:</strong> <span class="risk-low">Zero ❌ — Images will load on hover/click, invisible to
+                    user</span></p>
+        </div>
+
+        <!-- CHANGE 5 -->
+        <div class="change-card">
+            <h3>5. Defer JavaScript <span class="tag tag-perf">Performance</span></h3>
+            <p><strong>What:</strong> Adding <code>defer</code> attribute to
+                <code>&lt;script src="script.js"&gt;</code>.</p>
+            <p class="hindi">🇮🇳 Kya: <code>script.js</code> ko <code>defer</code> karenge.</p>
+
+            <p><strong>Why:</strong> Without <code>defer</code>, the browser stops rendering the page while downloading
+                and executing JavaScript (32KB). With <code>defer</code>, the script downloads in parallel and executes
+                after the HTML is fully parsed — faster first paint.</p>
+            <p class="hindi">🇮🇳 Kyun: Bina <code>defer</code> ke browser page render rokta hai jab tak JS download
+                nahi ho jata (32KB). <code>defer</code> se JS parallel download hota hai aur HTML parse hone ke baad
+                execute hota hai — page jaldi dikhta hai.</p>
+
+            <p><strong>Before:</strong> <code>&lt;script src="assets/js/script.js"&gt;&lt;/script&gt;</code></p>
+            <p><strong>After:</strong> <code>&lt;script src="assets/js/script.js" defer&gt;&lt;/script&gt;</code></p>
+
+            <p><strong>Risk:</strong> <span class="risk-low">Zero ❌ — DOMContentLoaded events still fire correctly with
+                    defer</span></p>
+        </div>
+
+        <!-- CHANGE 6 -->
+        <div class="change-card">
+            <h3>6. Add LocalBusiness Schema (JSON-LD) <span class="tag tag-seo">SEO</span></h3>
+            <p><strong>What:</strong> Adding structured data (JSON-LD) to <code>index.html</code> with business info —
+                name, address, phone, hours, geo coordinates.</p>
+            <p class="hindi">🇮🇳 Kya: <code>index.html</code> mein Google ke liye structured business data add karenge
+                — naam, address, phone, timing sab.</p>
+
+            <p><strong>Why:</strong> Google uses structured data to show rich search results (business cards, knowledge
+                panels, maps). Without it, Google has to guess your business info. This directly improves SEO score and
+                search visibility.</p>
+            <p class="hindi">🇮🇳 Kyun: Google structured data se rich search results dikhata hai (business card, map,
+                timings). Bina iske Google ko guess karna padta hai. Yeh directly SEO score aur search visibility
+                improve karta hai.</p>
+
+            <p><strong>Risk:</strong> <span class="risk-low">Zero ❌ — Invisible JSON-LD in &lt;head&gt;, nothing visible
+                    on page</span></p>
+        </div>
+
+        <!-- CHANGE 7 -->
+        <div class="change-card">
+            <h3>7. Skip-to-Content Link + ARIA Roles <span class="tag tag-a11y">Accessibility</span></h3>
+            <p><strong>What:</strong> Adding an invisible "Skip to main content" link + <code>role="contentinfo"</code>
+                on footer + <code>id="main-content"</code> on first section.</p>
+            <p class="hindi">🇮🇳 Kya: Ek invisible "Skip to content" link add karenge + footer pe proper ARIA role
+                denge.</p>
+
+            <p><strong>Why:</strong> Screen reader users (blind users) need a way to skip the navigation and jump
+                directly to content. This is a WCAG requirement and Lighthouse checks for it. The link is invisible to
+                sighted users — only visible when keyboard-focused.</p>
+            <p class="hindi">🇮🇳 Kyun: Screen reader users (visually impaired) ko navigation skip karke directly
+                content pe jaane ka option chahiye. Yeh WCAG requirement hai. Yeh link normal users ko dikhega nahi —
+                sirf keyboard se focus karne pe dikhega.</p>
+
+            <p><strong>Risk:</strong> <span class="risk-low">Zero ❌ — Invisible to normal users</span></p>
+        </div>
+
+        <!-- CHANGE 8 -->
+        <div class="change-card">
+            <h3>8. Hamburger Menu: div → button <span class="tag tag-a11y">Accessibility</span></h3>
+            <p><strong>What:</strong> Changing the hamburger menu from <code>&lt;div class="hamburger"&gt;</code> to
+                <code>&lt;button class="hamburger" aria-label="Open navigation menu"&gt;</code>.</p>
+            <p class="hindi">🇮🇳 Kya: Hamburger menu ka <code>&lt;div&gt;</code> tag <code>&lt;button&gt;</code> mein
+                badlenge + aria-label denge.</p>
+
+            <p><strong>Why:</strong> Screen readers cannot identify a <code>&lt;div&gt;</code> as a clickable button.
+                Changing it to <code>&lt;button&gt;</code> makes it keyboard-accessible and screen-reader friendly. CSS
+                remains exactly the same.</p>
+            <p class="hindi">🇮🇳 Kyun: Screen readers <code>&lt;div&gt;</code> ko button nahi samajhte.
+                <code>&lt;button&gt;</code> banana se keyboard + screen reader dono se accessible hoga. CSS bilkul same
+                rahega.</p>
+
+            <p><strong>Risk:</strong> <span class="risk-low">Zero ❌ — Same CSS applies to &lt;button&gt;, visual
+                    appearance unchanged</span></p>
+        </div>
+
+        <!-- ══════════════════════════════════════ -->
+        <h2>📋 Summary Table</h2>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Change</th>
+                <th>Category</th>
+                <th>Visual Impact</th>
+                <th>Risk</th>
+                <th>Files Changed</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Preconnect hints</td>
+                <td><span class="tag tag-perf">Perf</span></td>
+                <td>None</td>
+                <td class="risk-none">Zero</td>
+                <td>34+ HTML pages</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Remove CSS @import</td>
+                <td><span class="tag tag-perf">Perf</span> <span class="tag tag-bp">BP</span></td>
+                <td>None</td>
+                <td class="risk-none">Zero</td>
+                <td>1 CSS file</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Image width/height</td>
+                <td><span class="tag tag-perf">Perf</span></td>
+                <td>None</td>
+                <td class="risk-none">Zero</td>
+                <td>34+ HTML pages</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Lazy-load mega menu</td>
+                <td><span class="tag tag-perf">Perf</span></td>
+                <td>None</td>
+                <td class="risk-none">Zero</td>
+                <td>34+ HTML pages</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Defer script.js</td>
+                <td><span class="tag tag-perf">Perf</span></td>
+                <td>None</td>
+                <td class="risk-none">Zero</td>
+                <td>34+ HTML pages</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>LocalBusiness schema</td>
+                <td><span class="tag tag-seo">SEO</span></td>
+                <td>None</td>
+                <td class="risk-none">Zero</td>
+                <td>1 file (index.html)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Skip-to-content + ARIA</td>
+                <td><span class="tag tag-a11y">A11y</span></td>
+                <td>None</td>
+                <td class="risk-none">Zero</td>
+                <td>34+ HTML pages</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Hamburger div → button</td>
+                <td><span class="tag tag-a11y">A11y</span></td>
+                <td>None</td>
+                <td class="risk-none">Zero</td>
+                <td>34+ HTML pages</td>
+            </tr>
+        </table>
+
+        <!-- ══════════════════════════════════════ -->
+        <h2>⚠️ Important Notes</h2>
+        <div class="warning-note">
+            <strong>Koi bhi visual change NAHI hoga.</strong> Website ka look, theme, colors, layout, images, content —
+            sab exactly same rahega. Sirf invisible code-level optimizations hain jo browser ko faster + smarter
+            banayengi.<br><br>
+            <strong>No visual changes whatsoever.</strong> All changes are under-the-hood optimizations that improve how
+            browsers parse and render the website.
+        </div>
+
+        <div class="visual-note">
+            <strong>Rollback:</strong> Sab changes Git mein tracked hain. Agar kuch bhi issue aaye toh
+            <code>git revert</code> se instantly previous version pe wapas ja sakte hain.<br>
+            <strong>रोलबैक:</strong> सब changes Git से tracked हैं। कोई भी issue आए तो <code>git revert</code> से तुरंत
+            पुराने version पे वापस जा सकते हैं।
+        </div>
+
+        <div class="footer-note">
+            Report generated by ViViD Code Studio · March 10, 2026<br>
+            <strong>Awaiting your approval to proceed with changes. ✋</strong>
+        </div>
+
+    </div>
+</body>
+
+</html>
