@@ -1,31 +1,30 @@
 /* ====================================
    SUPEN SPA - MAIN STYLESHEET
-   Midnight Purple Glassmorphism Theme
-   Royal · Futuristic · Sophisticated
+   Dark Purple & Maroon Luxury Theme
+   Royal · Passionate · Sophisticated
    ==================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 /* ROOT VARIABLES */
 :root {
-    /* ── NEW Midnight Purple Palette ── */
-    --color-dark-royal: #0E0620;
-    --color-midnight: #1A0B2E;
-    --color-royal-purple: #231042;
-    --color-deep-indigo: #2D1B69;
+    /* ── Dark Purple + Maroon Palette ── */
+    --color-dark-royal: #160514;
+    --color-midnight: #2A0A1F;
+    --color-royal-purple: #3D0D2B;
+    --color-deep-indigo: #5C1040;
     --color-gold: #FFD700;
     --color-gold-light: #FFDF40;
     --color-orange-bright: #FF6B00;
-    --color-lavender: #B39DDB;
+    --color-lavender: #D4A0C0;
     --color-gold-dim: #C9A800;
-    --color-magenta: #FF2DD4;
-    --color-cyan: #00E5FF;
-    --color-lavender: #B39DDB;
-    --color-lavender-dim: #7C4DFF;
-    --color-white: #F8F6FF;
-    --color-white-dark: #E8E0FF;
-    --color-text-body: #D4C8F0;
-    --color-text-light: #9E8FC5;
+    --color-magenta: #C2185B;
+    --color-cyan: #FF6090;
+    --color-lavender-dim: #8B0035;
+    --color-white: #FFF5F8;
+    --color-white-dark: #F0D8E5;
+    --color-text-body: #E8C8D8;
+    --color-text-light: #B88FA0;
     --color-border: rgba(255, 215, 0, 0.18);
 
     /* Fonts */
@@ -46,26 +45,26 @@
     --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.7);
     --glow-gold: 0 0 20px rgba(255, 215, 0, 0.45), 0 0 40px rgba(255, 215, 0, 0.20);
     --glow-gold-intense: 0 0 35px rgba(255, 215, 0, 0.65), 0 0 70px rgba(255, 215, 0, 0.35);
-    --glow-magenta: 0 0 20px rgba(255, 45, 212, 0.4);
-    --glow-cyan: 0 0 20px rgba(0, 229, 255, 0.4);
-    --inner-glow: inset 0 0 30px rgba(179, 157, 219, 0.10), inset 0 1px 0 rgba(255, 215, 0, 0.25), inset 0 -1px 0 rgba(124, 77, 255, 0.15);
+    --glow-magenta: 0 0 20px rgba(194, 24, 91, 0.5);
+    --glow-cyan: 0 0 20px rgba(139, 0, 53, 0.45);
+    --inner-glow: inset 0 0 30px rgba(212, 160, 192, 0.10), inset 0 1px 0 rgba(255, 215, 0, 0.25), inset 0 -1px 0 rgba(139, 0, 53, 0.20);
 
     /* Gradient Text Effects */
-    --gradient-primary: linear-gradient(135deg, #FFD700 0%, #FFE55C 40%, #FFD700 70%, #B39DDB 100%);
+    --gradient-primary: linear-gradient(135deg, #FFD700 0%, #FFE55C 40%, #FFD700 70%, #D4A0C0 100%);
     --gradient-premium: linear-gradient(90deg, #FFE55C 0%, #FFD700 50%, #FFE55C 100%);
-    --gradient-exclusive: linear-gradient(45deg, #FFD700 0%, #FFE55C 25%, #00E5FF 50%, #B39DDB 75%, #FFD700 100%);
-    --gradient-secondary: linear-gradient(120deg, #FFE55C 0%, #B39DDB 50%, #FFE55C 100%);
-    --gradient-animated: linear-gradient(90deg, #FFD700 0%, #FFE55C 20%, #00E5FF 40%, #B39DDB 60%, #FF2DD4 80%, #FFD700 100%);
+    --gradient-exclusive: linear-gradient(45deg, #FFD700 0%, #FFE55C 25%, #FF6090 50%, #D4A0C0 75%, #FFD700 100%);
+    --gradient-secondary: linear-gradient(120deg, #FFE55C 0%, #D4A0C0 50%, #FFE55C 100%);
+    --gradient-animated: linear-gradient(90deg, #FFD700 0%, #FFE55C 20%, #FF6090 40%, #D4A0C0 60%, #C2185B 80%, #FFD700 100%);
 
-    /* Background — dense tech texture */
+    /* Background — Dark Purple + Maroon rich texture */
     --bg-texture:
-        radial-gradient(ellipse 60% 50% at 12% 18%, rgba(255, 45, 212, 0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 60% at 88% 82%, rgba(0, 229, 255, 0.10) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 12% 18%, rgba(139, 0, 53, 0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 88% 82%, rgba(194, 24, 91, 0.14) 0%, transparent 60%),
         radial-gradient(ellipse 40% 40% at 55% 30%, rgba(255, 215, 0, 0.06) 0%, transparent 55%),
-        radial-gradient(circle 300px at 25% 75%, rgba(124, 77, 255, 0.18) 0%, transparent 50%),
-        radial-gradient(circle 250px at 75% 25%, rgba(255, 45, 212, 0.10) 0%, transparent 50%),
-        radial-gradient(circle 200px at 50% 90%, rgba(0, 229, 255, 0.08) 0%, transparent 40%),
-        linear-gradient(135deg, #0E0620 0%, #1A0B2E 30%, #231042 60%, #1A0B2E 80%, #0E0620 100%);
+        radial-gradient(circle 300px at 25% 75%, rgba(92, 16, 64, 0.25) 0%, transparent 50%),
+        radial-gradient(circle 250px at 75% 25%, rgba(139, 0, 53, 0.15) 0%, transparent 50%),
+        radial-gradient(circle 200px at 50% 90%, rgba(194, 24, 91, 0.10) 0%, transparent 40%),
+        linear-gradient(135deg, #160514 0%, #2A0A1F 30%, #3D0D2B 60%, #2A0A1F 80%, #160514 100%);
 
     /* Transitions */
     --transition-base: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -73,7 +72,7 @@
     --transition-fast: all 0.2s ease;
 
     /* Unified Card Settings */
-    --card-bg: rgba(26, 11, 46, 0.6);
+    --card-bg: rgba(42, 10, 31, 0.65);
     --card-border: 1px solid rgba(255, 215, 0, 0.15);
     --card-blur: blur(15px);
     --card-radius: 24px;
@@ -258,11 +257,11 @@ html {
 
     0%,
     100% {
-        box-shadow: 0 0 6px 2px rgba(0, 229, 255, 0.4);
+        box-shadow: 0 0 6px 2px rgba(139, 0, 53, 0.45);
     }
 
     50% {
-        box-shadow: 0 0 14px 5px rgba(255, 45, 212, 0.5);
+        box-shadow: 0 0 14px 5px rgba(194, 24, 91, 0.55);
     }
 }
 
@@ -386,12 +385,12 @@ body::before {
     z-index: 0;
     pointer-events: none;
     background:
-        radial-gradient(circle 180px at 10% 20%, rgba(124, 77, 255, 0.28) 0%, transparent 70%),
-        radial-gradient(circle 220px at 85% 15%, rgba(255, 45, 212, 0.20) 0%, transparent 70%),
-        radial-gradient(circle 160px at 70% 65%, rgba(0, 229, 255, 0.18) 0%, transparent 70%),
+        radial-gradient(circle 180px at 10% 20%, rgba(139, 0, 53, 0.32) 0%, transparent 70%),
+        radial-gradient(circle 220px at 85% 15%, rgba(194, 24, 91, 0.22) 0%, transparent 70%),
+        radial-gradient(circle 160px at 70% 65%, rgba(92, 16, 64, 0.20) 0%, transparent 70%),
         radial-gradient(circle 200px at 20% 80%, rgba(255, 215, 0, 0.12) 0%, transparent 70%),
-        radial-gradient(circle 140px at 55% 45%, rgba(179, 157, 219, 0.15) 0%, transparent 70%),
-        radial-gradient(circle 120px at 90% 85%, rgba(124, 77, 255, 0.22) 0%, transparent 70%);
+        radial-gradient(circle 140px at 55% 45%, rgba(212, 160, 192, 0.16) 0%, transparent 70%),
+        radial-gradient(circle 120px at 90% 85%, rgba(139, 0, 53, 0.24) 0%, transparent 70%);
 
 }
 
@@ -405,7 +404,7 @@ body::after {
     /* Layer 1: Subtle dark stone/marble texture from Unsplash */
     background:
         url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=40&auto=format&fit=crop') center/cover,
-        linear-gradient(rgba(14, 6, 32, 0.82), rgba(26, 11, 46, 0.88));
+        linear-gradient(rgba(22, 5, 20, 0.84), rgba(42, 10, 31, 0.90));
     opacity: 0.09;
     mix-blend-mode: luminosity;
 }
@@ -1430,13 +1429,13 @@ a:focus-visible {
     transition: var(--transition-base);
 }
 
-/* ── Navbar Scrolled State ── */
+/* ── Navbar Scrolled State — Dark Purple + Maroon ── */
 .navbar.scrolled {
-    background: rgba(14, 6, 32, 0.98) !important;
-    backdrop-filter: blur(25px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
-    border-bottom: 1px solid rgba(255, 215, 0, 0.15) !important;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, rgba(22, 5, 20, 0.97) 0%, rgba(42, 10, 31, 0.96) 50%, rgba(61, 13, 43, 0.97) 100%) !important;
+    backdrop-filter: blur(28px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+    border-bottom: 1px solid rgba(139, 0, 53, 0.35) !important;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255, 215, 0, 0.10) !important;
     padding: 0.5rem 0;
 }
 
@@ -2820,8 +2819,9 @@ section {
    ==================================== */
 
 .footer {
-    background: rgba(8, 3, 18, 0.97);
-    border-top: 1px solid rgba(255, 215, 0, 0.22);
+    background: linear-gradient(180deg, rgba(13, 3, 10, 0.99) 0%, rgba(8, 1, 6, 1) 100%);
+    border-top: 1px solid rgba(139, 0, 53, 0.40);
+    box-shadow: 0 -4px 40px rgba(92, 16, 64, 0.20);
     padding: var(--spacing-2xl) 0 var(--spacing-lg);
 }
 
@@ -2890,7 +2890,7 @@ section {
 
 .social-icons a:hover {
     background: var(--color-gold);
-    color: #0E0620;
+    color: #160514;
     box-shadow: var(--glow-gold);
     transform: translateY(-3px) scale(1.1);
     border-color: var(--color-gold);

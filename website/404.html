@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Page Not Found – Supen Spa Mumbai</title>
+    <link crossorigin="anonymous"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" type="image/png" href="assets/images/Supen-Spa-Logo.png">
+    <meta name="theme-color" content="#160514">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-dark-royal: #160514;
+            --color-midnight: #2A0A1F;
+            --color-royal-purple: #3D0D2B;
+            --color-maroon: #8B0035;
+            --color-gold: #FFD700;
+            --color-gold-light: #FFDF40;
+            --color-text-body: #E8C8D8;
+            --font-serif: 'Outfit', sans-serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, #160514 0%, #2A0A1F 30%, #3D0D2B 60%, #2A0A1F 80%, #160514 100%);
+            background-attachment: fixed;
+            color: var(--color-text-body);
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* ── Bokeh Orbs ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(circle 220px at 10% 20%, rgba(139, 0, 53, 0.35) 0%, transparent 70%),
+                radial-gradient(circle 280px at 88% 15%, rgba(194, 24, 91, 0.25) 0%, transparent 70%),
+                radial-gradient(circle 180px at 70% 75%, rgba(92, 16, 64, 0.22) 0%, transparent 70%),
+                radial-gradient(circle 150px at 20% 85%, rgba(255, 215, 0, 0.10) 0%, transparent 70%),
+                radial-gradient(circle 200px at 55% 45%, rgba(212, 160, 192, 0.12) 0%, transparent 70%);
+            animation: orbFloat 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes orbFloat {
+            0% {
+                filter: hue-rotate(0deg);
+                transform: scale(1);
+            }
+
+            50% {
+                filter: hue-rotate(10deg);
+                transform: scale(1.04);
+            }
+
+            100% {
+                filter: hue-rotate(-5deg);
+                transform: scale(1);
+            }
+        }
+
+        /* ── Floating particles ── */
+        .particle {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            animation: particleDrift linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes particleDrift {
+            0% {
+                transform: translateY(110vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            90% {
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* ── Main Container ── */
+        .not-found-container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            max-width: 680px;
+            width: 100%;
+        }
+
+        /* ── Logo ── */
+        .logo-wrap {
+            margin-bottom: 2.5rem;
+        }
+
+        .logo-wrap img {
+            height: 90px;
+            width: auto;
+            filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.45));
+            animation: logoPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes logoPulse {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.40));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 28px rgba(255, 215, 0, 0.65));
+            }
+        }
+
+        /* ── 404 Big Text ── */
+        .error-number {
+            font-family: var(--font-serif);
+            font-size: clamp(7rem, 20vw, 11rem);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -4px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFE55C 30%, #FF6090 60%, #D4A0C0 85%, #FFD700 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+            margin-bottom: 0.2rem;
+            position: relative;
+        }
+
+        /* Glow echo behind the number */
+        .error-number::after {
+            content: '404';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(139, 0, 53, 0.6), rgba(194, 24, 91, 0.4));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: blur(18px);
+            z-index: -1;
+            transform: translateY(8px);
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ── Divider ── */
+        .gold-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #FFD700, transparent);
+            margin: 0.8rem auto 1.6rem;
+        }
+
+        /* ── Heading ── */
+        .error-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.4rem, 4vw, 2rem);
+            font-weight: 700;
+            color: #FFF5F8;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Subtitle ── */
+        .error-subtitle {
+            font-size: 1rem;
+            color: var(--color-text-body);
+            line-height: 1.8;
+            max-width: 480px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.85;
+        }
+
+        /* ── Ritual Suggestion Badge ── */
+        .ritual-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(139, 0, 53, 0.20);
+            border: 1px solid rgba(139, 0, 53, 0.45);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            color: #D4A0C0;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+        }
+
+        /* ── CTA Buttons ── */
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary-404 {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, #FFD700, #FFB800);
+            color: #160514;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 0.92rem;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.30);
+        }
+
+        .btn-primary-404:hover {
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.50);
+            background: linear-gradient(135deg, #FFE55C, #FFD700);
+        }
+
+        .btn-secondary-404 {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: transparent;
+            color: #F0D8E5;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.92rem;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            border: 1px solid rgba(139, 0, 53, 0.55);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-secondary-404:hover {
+            background: rgba(139, 0, 53, 0.25);
+            border-color: rgba(212, 160, 192, 0.6);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* ── Helpful Links ── */
+        .helpful-links {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .helpful-links a {
+            color: rgba(255, 215, 0, 0.70);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.25s;
+        }
+
+        .helpful-links a:hover {
+            color: #FFD700;
+        }
+
+        .helpful-links span {
+            color: rgba(255, 215, 0, 0.25);
+            font-size: 0.85rem;
+        }
+
+        /* ── Bottom brand line ── */
+        .brand-footer {
+            margin-top: 3rem;
+            font-size: 0.78rem;
+            color: rgba(184, 143, 160, 0.55);
+        }
+
+        .brand-footer a {
+            color: rgba(255, 215, 0, 0.55);
+            text-decoration: none;
+        }
+
+        /* ── Countdown ── */
+        #countdown-text {
+            font-size: 0.82rem;
+            color: rgba(212, 160, 192, 0.65);
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating particles -->
+    <div class="particle"
+        style="width:6px;height:6px;background:#FFD700;left:15%;animation-duration:9s;animation-delay:0s;"></div>
+    <div class="particle"
+        style="width:4px;height:4px;background:#8B0035;left:30%;animation-duration:12s;animation-delay:2s;"></div>
+    <div class="particle"
+        style="width:5px;height:5px;background:#C2185B;left:55%;animation-duration:10s;animation-delay:1s;"></div>
+    <div class="particle"
+        style="width:3px;height:3px;background:#FFD700;left:72%;animation-duration:14s;animation-delay:3s;"></div>
+    <div class="particle"
+        style="width:7px;height:7px;background:#D4A0C0;left:85%;animation-duration:8s;animation-delay:0.5s;"></div>
+    <div class="particle"
+        style="width:4px;height:4px;background:#8B0035;left:45%;animation-duration:11s;animation-delay:4s;"></div>
+
+    <div class="not-found-container">
+
+        <!-- Logo -->
+        <div class="logo-wrap">
+            <a href="index.html">
+                <img src="assets/images/Supen-Spa-Logo.png" alt="Supen Spa – Royal Luxury Wellness Sanctuary">
+            </a>
+        </div>
+
+        <!-- 404 Number -->
+        <div class="error-number">404</div>
+
+        <div class="gold-divider"></div>
+
+        <!-- Heading -->
+        <h1 class="error-title">This Ritual Doesn't Exist</h1>
+
+        <!-- Subtitle -->
+        <p class="error-subtitle">
+            The page you seek has wandered beyond our sanctuary walls.
+            Perhaps it was moved, renamed, or it never quite existed.<br>
+            Let us guide you back to serenity.
+        </p>
+
+        <!-- Ritual badge -->
+        <div class="ritual-badge">
+            <i class="fas fa-spa"></i>
+            Supen Spa &mdash; Mumbai's Royal Wellness Sanctuary
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="cta-group">
+            <a href="index.html" class="btn-primary-404">
+                <i class="fas fa-home"></i>
+                Return Home
+            </a>
+            <a href="contact.html" class="btn-secondary-404">
+                <i class="fas fa-envelope"></i>
+                Contact Us
+            </a>
+        </div>
+
+        <!-- Helpful Quick Links -->
+        <div class="helpful-links">
+            <a href="services.html"><i class="fas fa-spa" style="margin-right:4px;font-size:0.78rem;"></i>Rituals</a>
+            <span>|</span>
+            <a href="pricing.html"><i class="fas fa-tag" style="margin-right:4px;font-size:0.78rem;"></i>Pricing</a>
+            <span>|</span>
+            <a href="gallery.html"><i class="fas fa-images" style="margin-right:4px;font-size:0.78rem;"></i>Gallery</a>
+            <span>|</span>
+            <a href="about.html"><i class="fas fa-heart" style="margin-right:4px;font-size:0.78rem;"></i>About</a>
+        </div>
+
+        <!-- Auto-redirect countdown -->
+        <p id="countdown-text">Redirecting to homepage in <strong id="timer">10</strong>s...</p>
+
+        <!-- Brand footer -->
+        <p class="brand-footer">
+            &copy; 2026 Supen Spa. All Rights Reserved. &nbsp;|&nbsp;
+            built with <i class="fas fa-heart" style="color:#8B0035;font-size:0.72rem;"></i> by
+            <a href="https://vividcodestudio.web.app" target="_blank" rel="noopener noreferrer">ViViD Code Studio</a>
+        </p>
+
+    </div>
+
+    <script>
+        // Auto-redirect to homepage after 10 seconds
+        let t = 10;
+        const timerEl = document.getElementById('timer');
+        const interval = setInterval(() => {
+            t--;
+            timerEl.textContent = t;
+            if (t <= 0) {
+                clearInterval(interval);
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
