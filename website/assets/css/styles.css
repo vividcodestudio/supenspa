@@ -305,7 +305,7 @@ html {
     display: flex;
     gap: 1.5rem;
     width: max-content;
-
+    animation: marquee 30s linear infinite;
 }
 
 .marquee-content:hover {
